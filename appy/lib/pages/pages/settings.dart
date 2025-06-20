@@ -232,6 +232,32 @@ SizedBox(height: 24,),
         ),
       ]
         
+        ),
+        //SizedBox(height: 3,),
+
+         Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Padding(
+          padding: const EdgeInsets.only(left:12.0),
+          child: Text('Change Password:',
+            style: TextStyle(fontSize: 20,
+          //  fontWeight: FontWeight.bold,
+            fontStyle: FontStyle.italic,
+            color: Colors.blue),
+          ),
+        ),
+        IconButton(
+          icon: Icon(Icons.chevron_right, 
+          size: 60,
+          color: Colors.blue),
+          onPressed: () {
+            // Navigate to account management page
+            Navigator.pushNamed(context, '/change password');
+          },
+        ),
+      ]
+        
         )
 
 
