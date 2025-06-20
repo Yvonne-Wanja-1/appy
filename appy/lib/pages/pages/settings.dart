@@ -5,6 +5,19 @@ class SettingsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Colors.white,
+        body:ListView(
+          physics: BouncingScrollPhysics(),
+          children: [
+            Row( // Added children property
+              children: [],
+            )
+          ],
+        )
+        
+      ),
+    );
   }
 }
