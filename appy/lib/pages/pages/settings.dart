@@ -67,16 +67,32 @@ class SettingsPage extends StatelessWidget {
 
 SizedBox(height: 24,),
 
+    Padding(
+      padding: const EdgeInsets.only(left:12),
+      child: Text('Notifications 🔔', 
+      style: TextStyle(fontSize: 22, 
+      fontWeight: FontWeight.bold,
+      color: Colors.black), 
+      //textAlign: TextAlign.center,
+       ),
+    ),
+              
+    SizedBox(height: 10),
+
 Padding(
   padding: const EdgeInsets.only(left:12),
-  child: Text('Notifications', 
-  style: TextStyle(fontSize: 20, 
-  fontWeight: FontWeight.black,
-   color: Colors.blue), 
+  child: Text('Push Notifications:', 
+  style: TextStyle(fontSize: 16, 
+ // fontWeight: FontWeight.bold,
+ fontStyle: FontStyle.italic,
+   color:  Colors.grey.shade700),
+  ), 
    //textAlign: TextAlign.center,
    ),
-),
-            SizedBox(height: 16,),
+          
+
+SizedBox(height: 16,),
+
 
 
 
