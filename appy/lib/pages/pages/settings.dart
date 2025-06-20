@@ -197,7 +197,16 @@ Padding(
 ),
 
 
-
+SizedBox(height: 24,),
+    Padding(
+      padding: const EdgeInsets.only(left:12),
+      child: Text('Account 🔐', 
+      style: TextStyle(fontSize: 22, 
+      fontWeight: FontWeight.bold,
+      color: Colors.black), 
+      //textAlign: TextAlign.center,
+       ),
+    ),
 
 
 
