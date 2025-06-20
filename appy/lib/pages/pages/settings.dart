@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 
-class SettingsPage extends StatelessWidget {
+class SettingsPage extends StatefulWidget {
   const SettingsPage({super.key});
+
+  @override
+  State<SettingsPage> createState() => _SettingsPageState();
+}
+
+class _SettingsPageState extends State<SettingsPage> {
+  bool _notificationsEnabled = true; // Initial state of the switch
 
   @override
   Widget build(BuildContext context) {
@@ -110,13 +117,15 @@ Padding(
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Switch(
-                  value: true, // Change this to a variable to manage state
+                  value: _notificationsEnabled, // Use the state variable
                   onChanged: (value) {
-                    // Handle switch toggle
-                    // You'll need to update the state variable here
-                    // setState(() { _notificationsEnabled = value; });
+                    setState(() {
+                      _notificationsEnabled = value; // Update the state
+                    });
                   },
                   activeColor: Colors.blue, // Color when switch is on
+                  inactiveThumbColor: Colors.grey, // Color of the thumb when off
+                  inactiveTrackColor: Colors.grey.shade300, // Color of the track when off
                 ),
               ),
     ],
