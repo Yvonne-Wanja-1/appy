@@ -41,7 +41,22 @@ class SettingsPage extends StatelessWidget {
                           },
                         ),
                       ),
+
                  ),
+
+                const Center(
+                 // padding: EdgeInsets.only(left: 8.0, top: 16.0),
+                  child: Text(
+                    'Settings 🛠️',
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.blue,
+                    ),
+                  ),
+                ),
+
+                
               ],
             )
           ],
