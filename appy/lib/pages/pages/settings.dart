@@ -113,6 +113,8 @@ Padding(
                   value: true, // Change this to a variable to manage state
                   onChanged: (value) {
                     // Handle switch toggle
+                    // You'll need to update the state variable here
+                    // setState(() { _notificationsEnabled = value; });
                   },
                   activeColor: Colors.blue, // Color when switch is on
                 ),
