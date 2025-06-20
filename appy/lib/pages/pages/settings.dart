@@ -67,16 +67,60 @@ class SettingsPage extends StatelessWidget {
 
 SizedBox(height: 24,),
 
+    Padding(
+      padding: const EdgeInsets.only(left:12),
+      child: Text('Notifications 🔔', 
+      style: TextStyle(fontSize: 22, 
+      fontWeight: FontWeight.bold,
+      color: Colors.black), 
+      //textAlign: TextAlign.center,
+       ),
+    ),
+              
+    SizedBox(height: 10),
+
 Padding(
   padding: const EdgeInsets.only(left:12),
-  child: Text('Notifications', 
-  style: TextStyle(fontSize: 20, 
-  fontWeight: FontWeight.black,
-   color: Colors.blue), 
+  child: Text('Push Notifications:', 
+  style: TextStyle(fontSize: 16, 
+ // fontWeight: FontWeight.bold,
+ fontStyle: FontStyle.italic,
+   color:  Colors.grey.shade700),
+  ), 
    //textAlign: TextAlign.center,
    ),
-),
-            SizedBox(height: 16,),
+          
+
+SizedBox(height: 16,),
+Padding(
+  padding: const EdgeInsets.only(left: 12.0, right: 23.0),
+  child: Row(
+    crossAxisAlignment: CrossAxisAlignment.start, // Align items to the top
+    children: [
+      Expanded( // Wrap the Text widget with Expanded in order to use the remaining space
+        child: Text('''Enable or disable push notifications for important updates, alerts and events 😀''',
+          style: TextStyle(
+            fontSize: 14,
+            color: Colors.blue,
+          ),
+        ),
+      ),
+      SizedBox(width: 16), // Add some spacing between text and switch
+      // Switch widget for toggling notifications
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Switch(
+                  value: true, // Change this to a variable to manage state
+                  onChanged: (value) {
+                    // Handle switch toggle
+                  },
+                  activeColor: Colors.blue, // Color when switch is on
+                ),
+              ),
+    ],
+  ),
+)
+
 
 
 
