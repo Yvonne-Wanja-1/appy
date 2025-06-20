@@ -44,21 +44,43 @@ class SettingsPage extends StatelessWidget {
 
                  ),
 
-                const Center(
-                 // padding: EdgeInsets.only(left: 8.0, top: 16.0),
-                  child: Text(
-                    'Settings 🛠️',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.blue,
+                const Expanded( // 1. Wrap with Expanded
+                  child: Center(
+                   // padding: EdgeInsets.only(left: 8.0, top: 16.0),
+                    child: Text(
+                      'Settings 🛠️',
+                      style: TextStyle(
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.blue,
+                      ),
                     ),
                   ),
+                ),
+                const SizedBox( // 2. Add SizedBox to balance the leading widget
+                  width: 30.0 + 15.0, // Width of back button container + left padding
                 ),
 
                 
               ],
-            )
+            ),
+
+SizedBox(height: 24,),
+
+Padding(
+  padding: const EdgeInsets.only(left:12),
+  child: Text('Notifications', 
+  style: TextStyle(fontSize: 20, 
+  fontWeight: FontWeight.black,
+   color: Colors.blue), 
+   //textAlign: TextAlign.center,
+   ),
+),
+            SizedBox(height: 16,),
+
+
+
+
           ],
         )
         
