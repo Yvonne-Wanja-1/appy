@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show ByteData, rootBundle; // Required for rootBundle
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:open_file_plus/open_file_plus.dart'; // Required for OpenFile
+import 'package:open_file/open_file.dart'; // Required for OpenFile
 import 'package:path_provider/path_provider.dart'; // Required for getTemporaryDirectory
 import 'package:url_launcher/url_launcher.dart'; // Required for launching URLs
 
