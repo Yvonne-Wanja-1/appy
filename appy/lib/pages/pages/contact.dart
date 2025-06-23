@@ -76,12 +76,73 @@ class ContactPage extends StatelessWidget {
                     ),
                   ),
                   
-                  const Text(
-                    ' +254 705 558 885',
-                    style: TextStyle(
-                      fontSize: 16,
+                  Column(
+                    children: [
+                      const Text(
+                        'Call Us',
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: Colors.blue,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const Text(
+                        ' +254 705 558 885',
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: Colors.blue,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+
+SizedBox(height: 20), // Spacing between rows
+               Row(
+                //mainAxisAlignment: MainAxisAlignment.spaceBetween, // Uncommented this line
+                children:  [ 
+                  Padding(
+                    padding: const EdgeInsets.only(left: 20, right: 20),
+                    child: Container(
+                      height: 40, // Adjusted height for better appearance
+                      width: 40, // Adjusted width for better appearance
+                                 
+                                 //border radius:
+                    decoration: BoxDecoration(
                       color: Colors.blue,
+                      borderRadius: BorderRadius.circular(20),
+                      boxShadow: const [
+                        BoxShadow(
+                          color: Colors.red,
+                          blurRadius: 5.0,
+                          offset: Offset(0, 2),
+                        ),
+                      ],
                     ),
+                    
+                                 child: Icon(Icons.email, color: Colors.white, size: 30),   
+                    ),
+                  ),
+                  
+                  Column(
+                    children: [
+                      const Text(
+                        'Email Us',
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: Colors.blue,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const Text(
+                        ' info@elim-trust.org',
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: Colors.blue,
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
