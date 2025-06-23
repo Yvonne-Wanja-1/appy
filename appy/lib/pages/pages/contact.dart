@@ -146,6 +146,58 @@ SizedBox(height: 20), // Spacing between rows
                   ),
                 ],
               ),
+              const SizedBox(height: 20),
+               Row(
+                //mainAxisAlignment: MainAxisAlignment.spaceBetween, // Uncommented this line
+                children:  [ 
+                  Padding(
+                    padding: const EdgeInsets.only(left: 20, right: 20),
+                    child: Container(
+                      height: 40, // Adjusted height for better appearance
+                      width: 40, // Adjusted width for better appearance
+                                 
+                                 //border radius:
+                    decoration: BoxDecoration(
+                      color: Colors.blue,
+                      borderRadius: BorderRadius.circular(20),
+                      boxShadow: const [
+                        BoxShadow(
+                          color: Colors.red,
+                          blurRadius: 5.0,
+                          offset: Offset(0, 2),
+                        ),
+                      ],
+                    ),
+
+                                 child: Icon(Icons.location_on, color: Colors.white, size: 30),
+                    ),
+                  ),
+                  
+                  Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: 1.0),
+                        child: const Text(
+                          'Address',
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: Colors.blue,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                      const Text(
+                        ' Jacaranda drive71, Kiambu',
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: Colors.blue,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              const SizedBox(height: 20),
             
           ],
          ),
