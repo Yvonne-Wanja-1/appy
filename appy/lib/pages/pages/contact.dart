@@ -174,9 +174,10 @@ SizedBox(height: 20), // Spacing between rows
                   ),
                   
                   Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Padding(
-                        padding: const EdgeInsets.only(left: 1.0),
+                        padding: const EdgeInsets.only(left: 39.0),
                         child: const Text(
                           'Address',
                           style: TextStyle(
@@ -187,7 +188,7 @@ SizedBox(height: 20), // Spacing between rows
                         ),
                       ),
                       const Text(
-                        ' Jacaranda drive71, Kiambu',
+                        'Jacaranda drive 71, Mushroom Gardens, Kiambu, Kenya',
                         style: TextStyle(
                           fontSize: 16,
                           color: Colors.blue,
@@ -198,6 +199,7 @@ SizedBox(height: 20), // Spacing between rows
                 ],
               ),
               const SizedBox(height: 20),
+              
             
           ],
          ),
