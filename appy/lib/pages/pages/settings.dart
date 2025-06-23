@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class SettingsPage extends StatefulWidget {
   const SettingsPage({super.key});
@@ -353,6 +355,7 @@ SizedBox(height: 24,),
       ]
         
         ),
+        SizedBox(height: 34,),
 
 
 
@@ -364,8 +367,29 @@ SizedBox(height: 24,),
 
 
           ],
-        )
+        ),
         
+
+
+           floatingActionButton: FloatingActionButton(
+          onPressed: () async {
+            // Direct WhatsApp link to Elim Trust
+            const String whatsappNumber =
+                '254705558885'; // Elim Trust WhatsApp number
+            final Uri url = Uri.parse('https://wa.me/$whatsappNumber');
+            if (!await launchUrl(url, mode: LaunchMode.externalApplication)) {
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(
+                    content: Text(
+                        'Could not open WhatsApp for $whatsappNumber. Please ensure WhatsApp is installed.')),
+              );
+              print('Could not launch $url');
+            }
+          },
+          backgroundColor: Colors.green,
+          tooltip: 'Chat on WhatsApp', // WhatsApp-like color
+          child: const Icon(FontAwesomeIcons.whatsapp, color: Colors.white),
+        ),
       ),
     );
   }
