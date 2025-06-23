@@ -7,6 +7,7 @@ import 'package:elim_trust_2/pages/pages/contact.dart';
 import 'package:elim_trust_2/pages/pages/contactsupport.dart';
 import 'package:elim_trust_2/pages/pages/donations.dart';
 import 'package:elim_trust_2/pages/pages/editinfo.dart';
+import 'package:elim_trust_2/pages/pages/faqs.dart';
 import 'package:elim_trust_2/pages/pages/feedback.dart';
 import 'package:elim_trust_2/pages/pages/gallery.dart';
 import 'package:elim_trust_2/pages/pages/homepage.dart';
@@ -69,6 +70,7 @@ routes: {
 
   '/feedback': (context) => const FeedbackPage(),
   '/contact_support': (context) => const ContactsupportPage(),
+  '/faqs': (context) => const FaqsPage(), // Add a FAQs page route
 
 },
 

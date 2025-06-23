@@ -253,7 +253,7 @@ SizedBox(height: 24,),
           color: Colors.blue),
           onPressed: () {
             // Navigate to account management page
-            Navigator.pushNamed(context, '/change password');
+            Navigator.pushNamed(context, '/change_password');
           },
         ),
       ]
