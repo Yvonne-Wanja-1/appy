@@ -258,7 +258,108 @@ SizedBox(height: 24,),
         ),
       ]
         
-        )
+        ),
+
+
+
+
+
+
+        SizedBox(height: 24,),
+    Padding(
+      padding: const EdgeInsets.only(left:12),
+      child: Text('Help and Support ❓', 
+      style: TextStyle(fontSize: 22, 
+      fontWeight: FontWeight.bold,
+      color: Colors.black), 
+      //textAlign: TextAlign.center,
+       ),
+    ),
+
+    SizedBox(height: 10),
+    Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Padding(
+          padding: const EdgeInsets.only(left:12.0),
+          child: Text('FAQs:',
+            style: TextStyle(fontSize: 20,
+          //  fontWeight: FontWeight.bold,
+            fontStyle: FontStyle.italic,
+            color: Colors.blue),
+          ),
+        ),
+        IconButton(
+          icon: Icon(Icons.chevron_right, 
+          size: 60,
+          color: Colors.blue),
+          onPressed: () {
+            // Navigate to account management page
+            Navigator.pushNamed(context, '/faqs');
+          },
+        ),
+      ]
+        
+        ),
+        //SizedBox(height: 3,),
+
+         Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Padding(
+          padding: const EdgeInsets.only(left:12.0),
+          child: Text('Contact Support:',
+            style: TextStyle(fontSize: 20,
+          //  fontWeight: FontWeight.bold,
+            fontStyle: FontStyle.italic,
+            color: Colors.blue),
+          ),
+        ),
+        IconButton(
+          icon: Icon(Icons.chevron_right, 
+          size: 60,
+          color: Colors.blue),
+          onPressed: () {
+            // Navigate to account management page
+            Navigator.pushNamed(context, '/contact_support');
+          },
+        ),
+      ]
+        
+        ),
+
+
+                 Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Padding(
+          padding: const EdgeInsets.only(left:12.0),
+          child: Text('Feedback:',
+            style: TextStyle(fontSize: 20,
+          //  fontWeight: FontWeight.bold,
+            fontStyle: FontStyle.italic,
+            color: Colors.blue),
+          ),
+        ),
+        IconButton(
+          icon: Icon(Icons.chevron_right, 
+          size: 60,
+          color: Colors.blue),
+          onPressed: () {
+            // Navigate to account management page
+            Navigator.pushNamed(context, '/feedback');
+          },
+        ),
+      ]
+        
+        ),
+
+
+
+
+
+
+
 
 
 

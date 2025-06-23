@@ -6,6 +6,7 @@ import 'package:elim_trust_2/pages/pages/communitypage.dart';
 import 'package:elim_trust_2/pages/pages/contact.dart';
 import 'package:elim_trust_2/pages/pages/donations.dart';
 import 'package:elim_trust_2/pages/pages/editinfo.dart';
+import 'package:elim_trust_2/pages/pages/feedback.dart';
 import 'package:elim_trust_2/pages/pages/gallery.dart';
 import 'package:elim_trust_2/pages/pages/homepage.dart';
 import 'package:elim_trust_2/pages/pages/latestnews.dart';
@@ -63,6 +64,9 @@ routes: {
    '/editinfo': (context) => const EditInfo(), // Add an edit info page route
   '/story': (context) => const StoryPage(), // Default route to home page
    '/settings': (context) => const SettingsPage(),  
+
+
+  '/feedback': (context) => const FeedbackPage(),
 
 },
 
