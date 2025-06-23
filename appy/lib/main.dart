@@ -4,6 +4,7 @@ import 'package:elim_trust_2/pages/pages/blogs.dart';
 import 'package:elim_trust_2/pages/pages/capacity.dart';
 import 'package:elim_trust_2/pages/pages/communitypage.dart';
 import 'package:elim_trust_2/pages/pages/contact.dart';
+import 'package:elim_trust_2/pages/pages/contactsupport.dart';
 import 'package:elim_trust_2/pages/pages/donations.dart';
 import 'package:elim_trust_2/pages/pages/editinfo.dart';
 import 'package:elim_trust_2/pages/pages/feedback.dart';
@@ -67,6 +68,7 @@ routes: {
 
 
   '/feedback': (context) => const FeedbackPage(),
+  '/contact_support': (context) => const ContactsupportPage(),
 
 },
 
