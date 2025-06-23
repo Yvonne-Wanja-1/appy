@@ -187,7 +187,7 @@ class BlogsPage extends StatelessWidget {
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20),
                             image: const DecorationImage(
-                              image: AssetImage('images/blog1.jpg'), // Ensure path is correct and in pubspec.yaml
+                              image: AssetImage('images/testimony.jpg'), // Ensure path is correct and in pubspec.yaml
                               fit: BoxFit.cover,
                             ),
                             boxShadow: [ // Consider a softer shadow
@@ -274,7 +274,7 @@ class BlogsPage extends StatelessWidget {
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20),
                             image: const DecorationImage(
-                              image: AssetImage('images/article.jpg'), // Ensure path is correct and in pubspec.yaml
+                              image: AssetImage('images/changedlife.jpg'), // Ensure path is correct and in pubspec.yaml
                               fit: BoxFit.cover,
                             ),
                             boxShadow: [ // Consider a softer shadow
