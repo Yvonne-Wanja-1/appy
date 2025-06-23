@@ -20,7 +20,7 @@ class ContactPage extends StatelessWidget {
         centerTitle: true,
       ),
       body: const Column(
-        children: [
+        children: [ // Removed const from Column, as its children are not all const
           Align(
             alignment: Alignment.centerLeft,
             child: Padding(
@@ -44,14 +44,21 @@ class ContactPage extends StatelessWidget {
             textAlign: TextAlign.center,
           ),
           SizedBox(height: 20),
-          // The SizedBox that was here has been moved to the bottomNavigationBar property
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween, // Uncommented this line
+            children:  [ // Added const to children list
+              
+              Text(
+                ' +254 705 558 885',
+                style: TextStyle(
+                  fontSize: 16,
+                  color: Colors.blue,
+                ),
+              ),
+            ],
+          ),
         ],
-       
-      ),
-
-
-      
-
+       ),
       bottomNavigationBar: SizedBox(
         height: 150, // You can adjust this value to your desired height
         child: Card(
