@@ -8,8 +8,72 @@ import 'package:open_file/open_file.dart'; // Required for OpenFile
 import 'package:path_provider/path_provider.dart'; // Required for getTemporaryDirectory
 import 'package:url_launcher/url_launcher.dart'; // Required for launching URLs
 
-class LatestnewsPage extends StatelessWidget {
+class LatestnewsPage extends StatefulWidget {
   const LatestnewsPage({super.key});
+
+  @override
+  State<LatestnewsPage> createState() => _LatestnewsPageState();
+}
+
+class _LatestnewsPageState extends State<LatestnewsPage>
+    with SingleTickerProviderStateMixin {
+    late AnimationController _menuIconFeedbackController;
+    late Animation<double> _menuIconRotationAnimation;
+    String? _lastSelectedMenuItemValue; // To store the value of the last tapped menu item
+
+  @override
+  void initState() {
+    super.initState();
+
+    _menuIconFeedbackController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 400), // Duration for the rotation
+    );
+    _menuIconRotationAnimation = Tween<double>(begin: 0.0, end: 1.0).animate( // 0.0 to 1.0 for a full 360-degree turn
+      CurvedAnimation(parent: _menuIconFeedbackController, curve: Curves.easeInOut),
+    );
+  }
+
+  @override
+  void dispose() {
+    _menuIconFeedbackController.dispose();
+    super.dispose();
+  }
+
+  void _handleMenuSelection(String value) {
+    // Trigger the rotation feedback animation for the menu icon
+    _menuIconFeedbackController.forward(from: 0.0);
+
+    switch (value) {
+      // Navigation logic remains the same
+      case 'signup_signin':
+        // Navigate to the authentication page (Sign Up/Sign In)
+        Navigator.pushNamed(context, '/auth');
+        // print('Selected: Sign Up/Sign In'); // Optional: keep for debugging
+        break;
+      case 'gallery_media':
+        // Navigate to the gallery/media page
+        Navigator.pushNamed(context, '/gallery');
+        // print('Selected: Gallery/Media'); // Optional: keep for debugging
+        break;
+      case 'donate':
+        Navigator.pushNamed(context, '/donations');
+        break;
+
+         case 'settings':
+        Navigator.pushNamed(context, '/settings');
+        break;
+      case 'contact_us':
+        // Navigate to the contact us page
+        Navigator.pushNamed(context, '/contact');
+        // print('Selected: Contact Us'); // Optional: keep for debugging
+        break;
+    }
+    // Update the state to reflect the last selected item
+    setState(() {
+      _lastSelectedMenuItemValue = value;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -62,28 +126,83 @@ class LatestnewsPage extends StatelessWidget {
             actions: [
               Padding(
                 padding: const EdgeInsets.all(12.0),
-                child: Container(
-                  height: 40,
-                  width: 40,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(30),
-                    boxShadow: const [
-                      BoxShadow(
-                        color: Colors.red,
-                        blurRadius: 5.0,
-                        offset: Offset(0, 2),
+                child: PopupMenuButton<String>(
+                  onSelected: _handleMenuSelection,
+                  itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
+                    PopupMenuItem<String>(
+                      value: 'signup_signin',
+                      child: AnimatedDefaultTextStyle(
+                        duration: const Duration(milliseconds: 300),
+                        style: TextStyle(
+                          color: _lastSelectedMenuItemValue == 'signup_signin' ? Colors.red : Colors.blue,
+                          // Add other consistent style properties if needed, e.g., fontSize
+                        ),
+                        child: const Text('Sign Up/Sign In'),
                       ),
-                    ],
-                  ),
-                  alignment: Alignment.center, // Center the icon within the container
-                  child: IconButton(
-                    icon: const Icon(Icons.menu, color: Colors.blue),
-                    padding: EdgeInsets.zero, // Remove default padding
-                    constraints: const BoxConstraints(), // Remove default constraints
-                    onPressed: () {
-                      // Add functionality for the menu button here
-                    },
+                    ),
+                    PopupMenuItem<String>(
+                      value: 'gallery_media',
+                      child: AnimatedDefaultTextStyle(
+                        duration: const Duration(milliseconds: 300),
+                        style: TextStyle(
+                          color: _lastSelectedMenuItemValue == 'gallery_media' ? Colors.red : Colors.blue,
+                        ),
+                        child: const Text('Gallery/Media'),
+                      ),
+                    ),
+                    PopupMenuItem<String>(
+                      value: 'donate',
+                      child: AnimatedDefaultTextStyle(
+                        duration: const Duration(milliseconds: 300),
+                        style: TextStyle(
+                          color: _lastSelectedMenuItemValue == 'donate' ? Colors.red : Colors.blue,
+                        ),
+                        child: const Text('Donate/Support Us'),
+                      ),
+                    ),
+
+                    PopupMenuItem<String>(
+                      value: 'settings',
+                      child: AnimatedDefaultTextStyle(
+                        duration: const Duration(milliseconds: 300),
+                        style: TextStyle(
+                          color: _lastSelectedMenuItemValue == 'settings' ? Colors.red : Colors.blue,
+                        ),
+                        child: const Text('Settings'),
+                      ),
+                    ),
+                    
+                  
+                    PopupMenuItem<String>(
+                      value: 'contact_us',
+                      child: AnimatedDefaultTextStyle(
+                        duration: const Duration(milliseconds: 300),
+                        style: TextStyle(
+                          color: _lastSelectedMenuItemValue == 'contact_us' ? Colors.red : Colors.blue,
+                        ),
+                        child: const Text('Contact Us'),
+                      ),
+                    ),
+                  ],
+                  tooltip: 'Open menu',
+                  child: RotationTransition(
+                    turns: _menuIconRotationAnimation,
+                    child: Container(
+                      height: 30,
+                      width: 30,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(30),
+                        boxShadow: const [
+                          BoxShadow(
+                            color: Colors.red,
+                            blurRadius: 5.0,
+                            offset: Offset(0, 2),
+                          ),
+                        ],
+                        ),
+                      child: const Icon(Icons.menu, color: Colors.blue),
+                        ),
                   ),
                 ),
               ),
@@ -397,7 +516,7 @@ class LatestnewsPage extends StatelessWidget {
                                     ),
                                   );
                                 }
-                               }
+                              }
                             },
                             child: Container(
                               height: 30,
@@ -528,6 +647,7 @@ const SizedBox(height: 10), // Spacing between rows
         ),
       ),
       
+
 
 
 
