@@ -19,184 +19,187 @@ class ContactPage extends StatelessWidget {
               )),
           centerTitle: true,
         ),
-        body: Column(
-          children: [
-            // Removed const from Column, as its children are not all const
-            const Align(
-              alignment: Alignment.centerLeft,
-              child: Padding(
-                padding: EdgeInsets.only(left: 22),
-                child: Text(
-                  'Get in Touch',
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.blueAccent,
+        body: SingleChildScrollView(
+          scrollDirection: Axis.vertical, // Changed to vertical scrolling
+          child: Column(
+            children: [
+              // Removed const from Column, as its children are not all const
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Padding(
+                  padding: EdgeInsets.only(left: 22),
+                  child: Text(
+                    'Get in Touch',
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.blueAccent,
+                    ),
                   ),
                 ),
               ),
-            ),
-            const SizedBox(height: 20),
-            const Text(
-              '''We would love to hear from you! Please reach out with any questions, suggestions or feedback 😊.
-              If you have any inquiries or need assistance, feel free to contact us through any of the following channels:''',
-              style: TextStyle(
-                fontSize: 16,
-                color: Colors.black,
+              const SizedBox(height: 20),
+              const Text(
+                '''We would love to hear from you! Please reach out with any questions, suggestions or feedback 😊.
+                If you have any inquiries or need assistance, feel free to contact us through any of the following channels:''',
+                style: TextStyle(
+                  fontSize: 16,
+                  color: Colors.black,
+                ),
+                textAlign: TextAlign.center,
               ),
-              textAlign: TextAlign.center,
-            ),
-
-            const SizedBox(height: 20),
-
-            Row(
-              //mainAxisAlignment: MainAxisAlignment.spaceBetween, // Uncommented this line
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 20, right: 20),
-                  child: Container(
-                    height: 40, // Adjusted height for better appearance
-                    width: 40, // Adjusted width for better appearance
-
-                    //border radius:
-                    decoration: BoxDecoration(
-                      color: Colors.blue,
-                      borderRadius: BorderRadius.circular(20),
-                      boxShadow: const [
-                        BoxShadow(
-                          color: Colors.red,
-                          blurRadius: 5.0,
-                          offset: Offset(0, 2),
-                        ),
-                      ],
+          
+              const SizedBox(height: 20),
+          
+              Row(
+                //mainAxisAlignment: MainAxisAlignment.spaceBetween, // Uncommented this line
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 20, right: 20),
+                    child: Container(
+                      height: 40, // Adjusted height for better appearance
+                      width: 40, // Adjusted width for better appearance
+          
+                      //border radius:
+                      decoration: BoxDecoration(
+                        color: Colors.blue,
+                        borderRadius: BorderRadius.circular(20),
+                        boxShadow: const [
+                          BoxShadow(
+                            color: Colors.red,
+                            blurRadius: 5.0,
+                            offset: Offset(0, 2),
+                          ),
+                        ],
+                      ),
+          
+                      child: Icon(Icons.phone, color: Colors.white, size: 30),
                     ),
-
-                    child: Icon(Icons.phone, color: Colors.white, size: 30),
                   ),
-                ),
-                Column(
-                  children: [
-                    const Text(
-                      'Call Us',
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: Colors.blue,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    const Text(
-                      ' +254 705 558 885',
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: Colors.blue,
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-
-            SizedBox(height: 20), // Spacing between rows
-            Row(
-              //mainAxisAlignment: MainAxisAlignment.spaceBetween, // Uncommented this line
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 20, right: 20),
-                  child: Container(
-                    height: 40, // Adjusted height for better appearance
-                    width: 40, // Adjusted width for better appearance
-
-                    //border radius:
-                    decoration: BoxDecoration(
-                      color: Colors.blue,
-                      borderRadius: BorderRadius.circular(20),
-                      boxShadow: const [
-                        BoxShadow(
-                          color: Colors.red,
-                          blurRadius: 5.0,
-                          offset: Offset(0, 2),
-                        ),
-                      ],
-                    ),
-
-                    child: Icon(Icons.email, color: Colors.white, size: 30),
-                  ),
-                ),
-                Column(
-                  children: [
-                    const Text(
-                      'Email Us',
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: Colors.blue,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    const Text(
-                      ' info@elim-trust.org',
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: Colors.blue,
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-            const SizedBox(height: 20),
-            Row(
-              //mainAxisAlignment: MainAxisAlignment.spaceBetween, // Uncommented this line
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 20, right: 20),
-                  child: Container(
-                    height: 40, // Adjusted height for better appearance
-                    width: 40, // Adjusted width for better appearance
-
-                    //border radius:
-                    decoration: BoxDecoration(
-                      color: Colors.blue,
-                      borderRadius: BorderRadius.circular(20),
-                      boxShadow: const [
-                        BoxShadow(
-                          color: Colors.red,
-                          blurRadius: 5.0,
-                          offset: Offset(0, 2),
-                        ),
-                      ],
-                    ),
-
-                    child:
-                        Icon(Icons.location_on, color: Colors.white, size: 30),
-                  ),
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(left: 39.0),
-                      child: const Text(
-                        'Address',
+                  Column(
+                    children: [
+                      const Text(
+                        'Call Us',
                         style: TextStyle(
                           fontSize: 16,
                           color: Colors.blue,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                    ),
-                    const Text(
-                      'Jacaranda drive 71, Mushroom Gardens, Kiambu, Kenya',
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: Colors.blue,
+                      const Text(
+                        ' +254 705 558 885',
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: Colors.blue,
+                        ),
                       ),
+                    ],
+                  ),
+                ],
+              ),
+          
+              SizedBox(height: 20), // Spacing between rows
+              Row(
+                //mainAxisAlignment: MainAxisAlignment.spaceBetween, // Uncommented this line
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 20, right: 20),
+                    child: Container(
+                      height: 40, // Adjusted height for better appearance
+                      width: 40, // Adjusted width for better appearance
+          
+                      //border radius:
+                      decoration: BoxDecoration(
+                        color: Colors.blue,
+                        borderRadius: BorderRadius.circular(20),
+                        boxShadow: const [
+                          BoxShadow(
+                            color: Colors.red,
+                            blurRadius: 5.0,
+                            offset: Offset(0, 2),
+                          ),
+                        ],
+                      ),
+          
+                      child: Icon(Icons.email, color: Colors.white, size: 30),
                     ),
-                  ],
-                ),
-              ],
-            ),
-            const SizedBox(height: 20),
-          ],
+                  ),
+                  Column(
+                    children: [
+                      const Text(
+                        'Email Us',
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: Colors.blue,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const Text(
+                        ' info@elim-trust.org',
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: Colors.blue,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              const SizedBox(height: 20),
+              Row(
+                //mainAxisAlignment: MainAxisAlignment.spaceBetween, // Uncommented this line
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 20, right: 20),
+                    child: Container(
+                      height: 40, // Adjusted height for better appearance
+                      width: 40, // Adjusted width for better appearance
+          
+                      //border radius:
+                      decoration: BoxDecoration(
+                        color: Colors.blue,
+                        borderRadius: BorderRadius.circular(20),
+                        boxShadow: const [
+                          BoxShadow(
+                            color: Colors.red,
+                            blurRadius: 5.0,
+                            offset: Offset(0, 2),
+                          ),
+                        ],
+                      ),
+          
+                      child:
+                          Icon(Icons.location_on, color: Colors.white, size: 30),
+                    ),
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: 39.0),
+                        child: const Text(
+                          'Address',
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: Colors.blue,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                      const Text(
+                        'Jacaranda drive 71, Mushroom Gardens, Kiambu, Kenya',
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: Colors.blue,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              const SizedBox(height: 20),
+            ],
+          ),
         ),
         bottomNavigationBar: SizedBox(
           height: 150, // You can adjust this value to your desired height
