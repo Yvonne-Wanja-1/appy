@@ -47,15 +47,18 @@ class ContactPage extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(height: 20),
-              const Text(
-                '''We would love to hear from you! Please reach out with any questions, suggestions or feedback 😊.
+              const SizedBox(height: 10),
+              Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: const Text(
+                  '''We would love to hear from you! Please reach out with any questions, suggestions or feedback 😊.
                 If you have any inquiries or need assistance, feel free to contact us through any of the following channels:''',
-                style: TextStyle(
-                  fontSize: 16,
-                  color: Colors.black,
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.black,
+                  ),
+                  textAlign: TextAlign.center,
                 ),
-                textAlign: TextAlign.center,
               ),
           
               const SizedBox(height: 20),
