@@ -219,6 +219,23 @@ class _EditInfoState extends State<EditInfo> {
                           keyboardType: TextInputType.phone,
                           textInputAction: TextInputAction.done,
                         ),
+                        Center(
+                          child: ElevatedButton(onPressed: (){},
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.blue,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                          ),
+                          child: const Text(
+                            'Submit',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          ),
+                        ),
                         const SizedBox(height: 30),
                       ],
                     ),
