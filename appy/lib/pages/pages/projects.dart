@@ -3,10 +3,17 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class ProjectsPage extends StatefulWidget {
+  
+  
   const ProjectsPage({super.key});
 
   @override
   State<ProjectsPage> createState() => _MyWidgetState();
+
+
+
+
+  
 }
 
 class _MyWidgetState extends State<ProjectsPage> with SingleTickerProviderStateMixin {

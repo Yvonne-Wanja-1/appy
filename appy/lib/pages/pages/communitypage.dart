@@ -10,14 +10,14 @@ class CommunityPage extends StatefulWidget {
 }
 
 class _CommunityPageState extends State<CommunityPage>
-    with TickerProviderStateMixin {
-//  int _selectedIndex = 0; // Define _selectedIndex with an initial value
-  int _selectedIndex = 3; // Define _selectedIndex2 with an initial value
-  late AnimationController _animationController;
-  late Animation<double> _scaleAnimation;
-  late AnimationController _menuIconFeedbackController;
-  late Animation<double> _menuIconRotationAnimation;
-  String? _lastSelectedMenuItemValue; // To store the value of the last tapped menu item
+      with TickerProviderStateMixin {
+  //  int _selectedIndex = 0; // Define _selectedIndex with an initial value
+    int _selectedIndex = 3; // Define _selectedIndex2 with an initial value
+    late AnimationController _animationController;
+    late Animation<double> _scaleAnimation;
+    late AnimationController _menuIconFeedbackController;
+    late Animation<double> _menuIconRotationAnimation;
+    String? _lastSelectedMenuItemValue; // To store the value of the last tapped menu item
 
   @override
   void initState() {
