@@ -5,7 +5,7 @@ import 'package:elim_trust_2/pages/pages/capacity.dart';
 import 'package:elim_trust_2/pages/pages/changepassword.dart';
 import 'package:elim_trust_2/pages/pages/communitypage.dart';
 import 'package:elim_trust_2/pages/pages/contact.dart';
-import 'package:elim_trust_2/pages/pages/contactsupport.dart';
+//import 'package:elim_trust_2/pages/pages/contactsupport.dart';
 import 'package:elim_trust_2/pages/pages/donations.dart';
 import 'package:elim_trust_2/pages/pages/editinfo.dart';
 import 'package:elim_trust_2/pages/pages/faqs.dart';
@@ -71,7 +71,7 @@ routes: {
 
 
   '/feedback': (context) => const FeedbackPage(),
-  '/contact_support': (context) => const ContactsupportPage(),
+  //'/contact_support': (context) => const ContactsupportPage(),
   '/faqs': (context) => const FaqsPage(), // Add a FAQs page route
   '/change_password': (context) => const PasswordPage(), // 
   '/manage_account': (context) => const ManageAccountPage(), // Add a manage account page route
