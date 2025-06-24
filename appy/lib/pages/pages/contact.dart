@@ -378,7 +378,16 @@ Container(
       ),
     ],
   ),
-  child: Icon(FontAwesomeIcons.instagram, color: Colors.black)),
+  child: GestureDetector(
+    
+    onTap: () async {
+      final Uri url = Uri.parse(
+          'https://www.instagram.com/ElimTrustOrg/?locale=en_GB');
+      if (!await launchUrl(url)) {
+        print('Could not launch $url');
+      }
+    },
+child: Icon(FontAwesomeIcons.instagram, color: Colors.black))),
 
 SizedBox(height: 20),
 
@@ -399,7 +408,15 @@ SizedBox(height: 20),
       ),
     ],
   ),
-  child: Icon(FontAwesomeIcons.x, color: Colors.black)),
+  child: GestureDetector(
+    onTap: () async {
+      final Uri url = Uri.parse(
+        'https://x.com/ElimTrustOrg?s=20');
+      if (!await launchUrl(url)) {
+        print('Could not launch $url');
+      }
+    },
+    child: Icon(FontAwesomeIcons.x, color: Colors.black))),
 
 
 
@@ -420,7 +437,17 @@ Container(
       ),
     ],
   ),
-  child: Icon(FontAwesomeIcons.linkedin, color: Colors.black)),
+  child: GestureDetector(
+    onTap: () async {
+      final Uri url = Uri.parse(
+          'https://www.linkedin.com/in/elim-trust-org/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app');
+      if (!await launchUrl(url)) {
+        print('Could not launch $url');
+      }
+    },
+    child: Icon(FontAwesomeIcons.linkedin, color: Colors.black),
+  ),
+),
 
   SizedBox(height: 34),
             ],
