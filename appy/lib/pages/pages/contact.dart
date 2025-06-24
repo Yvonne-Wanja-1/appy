@@ -213,7 +213,7 @@ class ContactPage extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 15),
               Padding(
                 padding: const EdgeInsets.only(left: 8.0),
                 child: const Text(
@@ -238,6 +238,101 @@ class ContactPage extends StatelessWidget {
 
 
 
+              const SizedBox(height: 15),
+              Padding(
+                padding: const EdgeInsets.only(left: 8.0),
+                child: const Text(
+                  'Your Email:',
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+             // const SizedBox(height: 10),
+              Mytextfield(
+                hintText: 'eg john.doe@example.com',
+                labelText: 'Email',
+               // helperText: 'Enter your email address',
+               // errorText: 'Email cannot be empty',
+                controller: TextEditingController(),
+                prefixIcon: Icons.email,
+                keyboardType: TextInputType.emailAddress,
+              ),
+
+
+const SizedBox(height: 15),
+              Padding(
+                padding: const EdgeInsets.only(left: 8.0),
+                child: const Text(
+                  'Subject :',
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+             // const SizedBox(height: 10),
+              Mytextfield(
+                hintText: 'eg Inquiry about services',
+                labelText: 'Subject',
+          
+                controller: TextEditingController(),
+                prefixIcon: Icons.subject,
+                keyboardType: TextInputType.name,
+              ),
+
+
+              
+const SizedBox(height: 15),
+              Padding(
+                padding: const EdgeInsets.only(left: 8.0),
+                child: const Text(
+                  'Message :',
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Container(
+                  height: 150,
+                  margin: const EdgeInsets.symmetric(horizontal: 8.0),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(30),
+                    border: Border.all(color: Colors.blue, width: 1),
+                    boxShadow: const [
+                      BoxShadow(
+                        color: Colors.black12,
+                        blurRadius: 5.0,
+                        offset: Offset(0, 2),
+                      ),
+                    ],
+                  ),
+                ),
+
+              ),
+
+
+
+Center(
+  child: ElevatedButton(
+    onPressed: () {},
+    style: ElevatedButton.styleFrom(
+      backgroundColor: Colors.blue,
+    ),
+    child: const Text('Submit', 
+    style: TextStyle(color: Colors.black,
+      fontWeight: FontWeight.bold, fontSize: 16
+            )),
+  ),
+)
 
 
             ],

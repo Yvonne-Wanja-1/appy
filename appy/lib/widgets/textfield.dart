@@ -82,7 +82,7 @@ class _MytextfieldState extends State<Mytextfield> {
             hintStyle: const TextStyle(color: Colors.grey),
             errorText: widget.errorText,
             errorStyle: const TextStyle(color: Colors.red),
-            prefixIcon: widget.prefixIcon != null ? Icon(widget.prefixIcon, color: Colors.blue) : null,
+            prefixIcon: widget.prefixIcon != null ? Icon(widget.prefixIcon, color: Colors.black) : null,
           ),
           style: const TextStyle(color: Colors.black),    
           cursorColor: Colors.blue,
