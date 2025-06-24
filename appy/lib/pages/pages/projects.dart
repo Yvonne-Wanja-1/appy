@@ -16,16 +16,26 @@ class ProjectsPage extends StatefulWidget {
   
 }
 
-class _MyWidgetState extends State<ProjectsPage> with SingleTickerProviderStateMixin {
+class _MyWidgetState extends State<ProjectsPage> with TickerProviderStateMixin {
+  // Fix: Changed to TickerProviderStateMixin as multiple AnimationControllers are used.
+  // Fix: Consolidated state variables from the nested class.
+  // Fix: Initial _selectedIndex for ProjectsPage should be 0.
   bool isOngoingSelected = true;
-  int _selectedIndex = 0;
-  late AnimationController _animationController;
+  int _selectedIndex = 0; 
+  late AnimationController _titleFadeSlideAnimationController; // For the title fade/slide animation
   late Animation<Offset> _slideAnimation;
+  late AnimationController _titleScaleAnimationController; // For the title scale animation
+  late Animation<double> _scaleAnimation;
+  late AnimationController _menuIconFeedbackController; // For menu icon rotation
+  late Animation<double> _menuIconRotationAnimation;
+  String? _lastSelectedMenuItemValue; // To store the value of the last tapped menu item
 
   @override
   void initState() {
     super.initState();
-    _animationController = AnimationController(
+
+    // Initialize for title fade/slide animation (from original _MyWidgetState)
+    _titleFadeSlideAnimationController = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 1),
     )..forward();
@@ -33,16 +43,70 @@ class _MyWidgetState extends State<ProjectsPage> with SingleTickerProviderStateM
     _slideAnimation = Tween<Offset>(
       begin: const Offset(0, 0.3),
       end: Offset.zero,
-    ).animate(CurvedAnimation(
-      parent: _animationController,
+    ).animate(CurvedAnimation( // Fix: Use _titleFadeSlideAnimationController
+      parent: _titleFadeSlideAnimationController,
       curve: Curves.easeInOut,
     ));
+
+    // Initialize for title scale animation (from duplicated _ProjectsPageState)
+    _titleScaleAnimationController = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 1),
+    )..repeat(reverse: true); // Makes the animation loop back and forth
+
+    _scaleAnimation = Tween<double>(begin: 1.0, end: 1.29).animate(
+        CurvedAnimation(parent: _titleScaleAnimationController, curve: Curves.easeInOut));
+
+    // Initialize for menu icon rotation (from duplicated _ProjectsPageState)
+    _menuIconFeedbackController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 400), // Duration for the rotation
+    );
+    _menuIconRotationAnimation = Tween<double>(begin: 0.0, end: 1.0).animate( // 0.0 to 1.0 for a full 360-degree turn
+      CurvedAnimation(parent: _menuIconFeedbackController, curve: Curves.easeInOut),
+    );
   }
 
   @override
   void dispose() {
-    _animationController.dispose();
+    _titleFadeSlideAnimationController.dispose();
+    _titleScaleAnimationController.dispose(); // Fix: Dispose the new controller
+    _menuIconFeedbackController.dispose(); // Fix: Dispose the new controller
     super.dispose();
+  }
+  void _handleMenuSelection(String value) {
+    // Trigger the rotation feedback animation for the menu icon
+    _menuIconFeedbackController.forward(from: 0.0);
+
+    switch (value) {
+      // Navigation logic remains the same
+      case 'signup_signin':
+        // Navigate to the authentication page (Sign Up/Sign In)
+        Navigator.pushNamed(context, '/auth');
+        // print('Selected: Sign Up/Sign In'); // Optional: keep for debugging
+        break;
+      case 'gallery_media':
+        // Navigate to the gallery/media page
+        Navigator.pushNamed(context, '/gallery');
+        // print('Selected: Gallery/Media'); // Optional: keep for debugging
+        break;
+      case 'donate':
+        Navigator.pushNamed(context, '/donations');
+        break;
+
+         case 'settings':
+        Navigator.pushNamed(context, '/settings');
+        break;
+      case 'contact_us':
+        // Navigate to the contact us page
+        Navigator.pushNamed(context, '/contact');
+        // print('Selected: Contact Us'); // Optional: keep for debugging
+        break;
+    }
+    // Update the state to reflect the last selected item
+    setState(() {
+      _lastSelectedMenuItemValue = value;
+    });
   }
 
   @override
@@ -59,7 +123,7 @@ class _MyWidgetState extends State<ProjectsPage> with SingleTickerProviderStateM
             backgroundColor: const Color.fromARGB(255, 4, 135, 242),
             centerTitle: true,
             title: FadeTransition(
-              opacity: _animationController,
+              opacity: _titleFadeSlideAnimationController, // Fix: Use the correct controller
               child: SlideTransition(
                 position: _slideAnimation,
                 child: const Text(
@@ -99,30 +163,87 @@ class _MyWidgetState extends State<ProjectsPage> with SingleTickerProviderStateM
             ),
             actions: [
               Padding(
-                padding: const EdgeInsets.all(12.0),
-                child: Container(
-                  height: 30,
-                  width: 30,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(30),
-                    boxShadow: const [
-                      BoxShadow(
-                        color: Colors.red,
-                        blurRadius: 5.0,
-                        offset: Offset(0, 2),
+                    padding: const EdgeInsets.all(12.0),
+                    child: PopupMenuButton<String>(
+                      onSelected: _handleMenuSelection,
+                      itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
+                        PopupMenuItem<String>(
+                          value: 'signup_signin',
+                          child: AnimatedDefaultTextStyle(
+                            duration: const Duration(milliseconds: 300),
+                            style: TextStyle(
+                              color: _lastSelectedMenuItemValue == 'signup_signin' ? Colors.red : Colors.blue,
+                              // Add other consistent style properties if needed, e.g., fontSize
+                            ),
+                            child: const Text('Sign Up/Sign In'),
+                          ),
+                        ),
+                        PopupMenuItem<String>(
+                          value: 'gallery_media',
+                          child: AnimatedDefaultTextStyle(
+                            duration: const Duration(milliseconds: 300),
+                            style: TextStyle(
+                              color: _lastSelectedMenuItemValue == 'gallery_media' ? Colors.red : Colors.blue,
+                            ),
+                            child: const Text('Gallery/Media'),
+                          ),
+                        ),
+                        PopupMenuItem<String>(
+                          value: 'donate',
+                          child: AnimatedDefaultTextStyle(
+                            duration: const Duration(milliseconds: 300),
+                            style: TextStyle(
+                              color: _lastSelectedMenuItemValue == 'donate' ? Colors.red : Colors.blue,
+                            ),
+                            child: const Text('Donate/Support Us'),
+                          ),
+                        ),
+
+                          PopupMenuItem<String>(
+                          value: 'settings',
+                          child: AnimatedDefaultTextStyle(
+                            duration: const Duration(milliseconds: 300),
+                            style: TextStyle(
+                              color: _lastSelectedMenuItemValue == 'settings' ? Colors.red : Colors.blue,
+                            ),
+                            child: const Text('Settings'),
+                          ),
+                        ),
+                        
+                      
+                        PopupMenuItem<String>(
+                          value: 'contact_us',
+                          child: AnimatedDefaultTextStyle(
+                            duration: const Duration(milliseconds: 300),
+                            style: TextStyle(
+                              color: _lastSelectedMenuItemValue == 'contact_us' ? Colors.red : Colors.blue,
+                            ),
+                            child: const Text('Contact Us'),
+                          ),
+                        ),
+                      ],
+                      tooltip: 'Open menu',
+                      child: RotationTransition(
+                        turns: _menuIconRotationAnimation,
+                        child: Container(
+                          height: 30,
+                          width: 30,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(30),
+                            boxShadow: const [
+                              BoxShadow(
+                                color: Colors.red,
+                                blurRadius: 5.0,
+                                offset: Offset(0, 2),
+                              ),
+                            ],
+                            ),
+                          child: const Icon(Icons.menu, color: Colors.blue),
+                            ),
                       ),
-                    ],
-                  ),
-                  child: IconButton(
-                    padding: EdgeInsets.zero,
-                    icon: const Icon(Icons.menu, color: Colors.blue),
-                    onPressed: () {
-                      // Add menu logic here
-                    },
-                  ),
-                ),
-              ),
+                          ),
+                    ),
             ],
           ),
         ),
