@@ -299,25 +299,34 @@ const SizedBox(height: 15),
                 ),
               ),
 
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Container(
-                  height: 150,
-                  margin: const EdgeInsets.symmetric(horizontal: 8.0),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(30),
-                    border: Border.all(color: Colors.blue, width: 1),
-                    boxShadow: const [
-                      BoxShadow(
-                        color: Colors.black12,
-                        blurRadius: 5.0,
-                        offset: Offset(0, 2),
-                      ),
-                    ],
-                  ),
-                ),
-
-              ),
+    // ...existing code...
+Padding(
+  padding: const EdgeInsets.all(10.0),
+  child: TextField(
+    controller: TextEditingController(),
+    maxLines: 6,
+    decoration: InputDecoration(
+      hintText: 'Type your message here...',
+      filled: true,
+      fillColor: Colors.white,
+      contentPadding: const EdgeInsets.all(16.0),
+      border: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(30),
+        borderSide: const BorderSide(color: Colors.blue, width: 1),
+      ),
+      enabledBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(30),
+        borderSide: const BorderSide(color: Colors.blue, width: 1),
+      ),
+      focusedBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(30),
+        borderSide: const BorderSide(color: Colors.blue, width: 2),
+      ),
+    ),
+    style: const TextStyle(fontSize: 16),
+  ),
+),
+// ...existing code...
 
 
 
