@@ -21,6 +21,13 @@ class ContactPage extends StatelessWidget {
                 color: Colors.blue,
               )),
           centerTitle: true,
+          leading: IconButton(
+            icon: const Icon(Icons.arrow_back, color: Colors.blue),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+          ),
+          elevation: 0,
         ),
         body: SingleChildScrollView(
           scrollDirection: Axis.vertical, // Changed to vertical scrolling
