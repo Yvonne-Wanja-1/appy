@@ -341,9 +341,115 @@ Center(
       fontWeight: FontWeight.bold, fontSize: 16
             )),
   ),
-)
+),
 
 
+SizedBox(height: 35),
+
+
+ const Align(
+                alignment: Alignment.centerLeft,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 22),
+                  child: Text(
+                    'Follow Us',
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                    ),
+                  ),
+                ),
+              ),
+
+
+SizedBox(height: 30),
+Container(
+  height: 50,
+  width: 50,
+  decoration: BoxDecoration(
+    color: const Color.fromARGB(255, 98, 173, 234),
+    borderRadius: BorderRadius.circular(50),
+    boxShadow: const [
+      BoxShadow(
+        color: Colors.red,
+        blurRadius: 5.0,
+        offset: Offset(0, 2),
+      ),
+    ],
+  ),
+  child: GestureDetector(
+    
+    onTap: () async {
+      final Uri url = Uri.parse(
+          'https://www.instagram.com/ElimTrustOrg/?locale=en_GB');
+      if (!await launchUrl(url)) {
+        print('Could not launch $url');
+      }
+    },
+child: Icon(FontAwesomeIcons.instagram, color: Colors.black))),
+
+SizedBox(height: 20),
+
+
+
+
+  Container(
+  height: 50,
+  width: 50,
+  decoration: BoxDecoration(
+    color: const Color.fromARGB(255, 98, 173, 234),
+    borderRadius: BorderRadius.circular(50),
+    boxShadow: const [
+      BoxShadow(
+        color: Colors.red,
+        blurRadius: 5.0,
+        offset: Offset(0, 2),
+      ),
+    ],
+  ),
+  child: GestureDetector(
+    onTap: () async {
+      final Uri url = Uri.parse(
+        'https://x.com/ElimTrustOrg?s=20');
+      if (!await launchUrl(url)) {
+        print('Could not launch $url');
+      }
+    },
+    child: Icon(FontAwesomeIcons.x, color: Colors.black))),
+
+
+
+SizedBox(height: 20),
+
+
+Container(
+  height: 50,
+  width: 50,
+  decoration: BoxDecoration(
+    color: const Color.fromARGB(255, 98, 173, 234),
+    borderRadius: BorderRadius.circular(50),
+    boxShadow: const [
+      BoxShadow(
+        color: Colors.red,
+        blurRadius: 5.0,
+        offset: Offset(0, 2),
+      ),
+    ],
+  ),
+  child: GestureDetector(
+    onTap: () async {
+      final Uri url = Uri.parse(
+          'https://www.linkedin.com/in/elim-trust-org/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app');
+      if (!await launchUrl(url)) {
+        print('Could not launch $url');
+      }
+    },
+    child: Icon(FontAwesomeIcons.linkedin, color: Colors.black),
+  ),
+),
+
+  SizedBox(height: 34),
             ],
           ),
         ),
