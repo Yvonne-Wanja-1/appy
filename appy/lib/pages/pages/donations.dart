@@ -412,7 +412,7 @@ class _DonationsPageState extends State<DonationsPage> with SingleTickerProvider
                       width: 40,
                       decoration: BoxDecoration(
                         color: Colors.blueAccent,
-                        borderRadius: BorderRadius.circular(10),
+                        borderRadius: BorderRadius.circular(40),
                       ),
                       child: Image.asset('images/mpesa.png', fit: BoxFit.cover,),),
                   ),
@@ -591,7 +591,24 @@ const SizedBox(
               keyboardType: TextInputType.phone,
               
             ),
+            ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.blue,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20),
+                ),
+              ),
+              child: const Text(
+                'Submit',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
             const SizedBox(height: 10),
+
 const Row(
   mainAxisAlignment: MainAxisAlignment.center,
   children: [
