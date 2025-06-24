@@ -341,9 +341,88 @@ Center(
       fontWeight: FontWeight.bold, fontSize: 16
             )),
   ),
-)
+),
 
 
+SizedBox(height: 35),
+
+
+ const Align(
+                alignment: Alignment.centerLeft,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 22),
+                  child: Text(
+                    'Follow Us',
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                    ),
+                  ),
+                ),
+              ),
+
+
+SizedBox(height: 30),
+Container(
+  height: 50,
+  width: 50,
+  decoration: BoxDecoration(
+    color: const Color.fromARGB(255, 98, 173, 234),
+    borderRadius: BorderRadius.circular(50),
+    boxShadow: const [
+      BoxShadow(
+        color: Colors.red,
+        blurRadius: 5.0,
+        offset: Offset(0, 2),
+      ),
+    ],
+  ),
+  child: Icon(FontAwesomeIcons.instagram, color: Colors.black)),
+
+SizedBox(height: 20),
+
+
+
+
+  Container(
+  height: 50,
+  width: 50,
+  decoration: BoxDecoration(
+    color: const Color.fromARGB(255, 98, 173, 234),
+    borderRadius: BorderRadius.circular(50),
+    boxShadow: const [
+      BoxShadow(
+        color: Colors.red,
+        blurRadius: 5.0,
+        offset: Offset(0, 2),
+      ),
+    ],
+  ),
+  child: Icon(FontAwesomeIcons.x, color: Colors.black)),
+
+
+
+SizedBox(height: 20),
+
+
+Container(
+  height: 50,
+  width: 50,
+  decoration: BoxDecoration(
+    color: const Color.fromARGB(255, 98, 173, 234),
+    borderRadius: BorderRadius.circular(50),
+    boxShadow: const [
+      BoxShadow(
+        color: Colors.red,
+        blurRadius: 5.0,
+        offset: Offset(0, 2),
+      ),
+    ],
+  ),
+  child: Icon(FontAwesomeIcons.linkedin, color: Colors.black)),
+
+  SizedBox(height: 34),
             ],
           ),
         ),
