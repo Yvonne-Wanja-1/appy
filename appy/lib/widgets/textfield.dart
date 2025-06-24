@@ -8,10 +8,12 @@ class Mytextfield extends StatefulWidget {
    this.labelText, 
    this.helperText, 
    this.hintText,
-    this.errorText,
-     this.obscureText,
-      this.keyboardType,
-       this.textInputAction});
+   this.errorText,
+   this.obscureText,
+   this.keyboardType,
+   this.textInputAction,
+   this.prefixIcon,
+   });
   final String? labelText;
   final String? helperText;
   final String? hintText;
@@ -19,6 +21,7 @@ class Mytextfield extends StatefulWidget {
   final bool? obscureText;
   final TextInputType? keyboardType;
   final TextInputAction? textInputAction;
+  final IconData? prefixIcon;
 
   @override
   State<Mytextfield> createState() => _MytextfieldState();
@@ -79,6 +82,7 @@ class _MytextfieldState extends State<Mytextfield> {
             hintStyle: const TextStyle(color: Colors.grey),
             errorText: widget.errorText,
             errorStyle: const TextStyle(color: Colors.red),
+            prefixIcon: widget.prefixIcon != null ? Icon(widget.prefixIcon, color: Colors.blue) : null,
           ),
           style: const TextStyle(color: Colors.black),    
           cursorColor: Colors.blue,

@@ -1,3 +1,4 @@
+import 'package:elim_trust_2/widgets/textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -10,7 +11,9 @@ class ContactPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Colors.white, // Ensure Scaffold background is white
         appBar: AppBar(
+          backgroundColor: Colors.white, // Ensure AppBar background is white
           title: const Text('Contact Us',
               style: TextStyle(
                 fontSize: 24,
@@ -23,17 +26,16 @@ class ContactPage extends StatelessWidget {
           scrollDirection: Axis.vertical, // Changed to vertical scrolling
           child: Column(
             children: [
-              // Removed const from Column, as its children are not all const
-              Align(
+              const Align(
                 alignment: Alignment.centerLeft,
                 child: Padding(
-                  padding: EdgeInsets.only(left: 22),
+                  padding: const EdgeInsets.only(left: 22),
                   child: Text(
                     'Get in Touch',
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
-                      color: Colors.blueAccent,
+                      color: Colors.black,
                     ),
                   ),
                 ),
@@ -73,7 +75,7 @@ class ContactPage extends StatelessWidget {
                         ],
                       ),
           
-                      child: Icon(Icons.phone, color: Colors.white, size: 30),
+                      child: const Icon(Icons.phone, color: Colors.white, size: 30),
                     ),
                   ),
                   Column(
@@ -121,7 +123,7 @@ class ContactPage extends StatelessWidget {
                         ],
                       ),
           
-                      child: Icon(Icons.email, color: Colors.white, size: 30),
+                      child: const Icon(Icons.email, color: Colors.white, size: 30),
                     ),
                   ),
                   Column(
@@ -168,8 +170,7 @@ class ContactPage extends StatelessWidget {
                         ],
                       ),
           
-                      child:
-                          Icon(Icons.location_on, color: Colors.white, size: 30),
+                      child: const Icon(Icons.location_on, color: Colors.white, size: 30),
                     ),
                   ),
                   Column(
@@ -198,6 +199,47 @@ class ContactPage extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 20),
+              const Align(
+                alignment: Alignment.centerLeft,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 22),
+                  child: Text(
+                    'Contact Form',
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 20),
+              Padding(
+                padding: const EdgeInsets.only(left: 8.0),
+                child: const Text(
+                  'Your Name:',
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+             // const SizedBox(height: 10),
+              Mytextfield(
+                hintText: 'eg John Doe',
+                labelText: 'Name',
+               // helperText: 'Enter your full name',
+               // errorText: 'Name cannot be empty',
+                controller: TextEditingController(),
+                prefixIcon: Icons.person,
+                keyboardType: TextInputType.name,
+              ),
+
+
+
+
+
             ],
           ),
         ),
