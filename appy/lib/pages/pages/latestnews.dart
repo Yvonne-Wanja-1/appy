@@ -652,6 +652,27 @@ class _LatestnewsPageState extends State<LatestnewsPage>
         
       
       
+
+
+           floatingActionButton: FloatingActionButton(
+          onPressed: () async {
+            // Direct WhatsApp link to Elim Trust
+            const String whatsappNumber =
+                '254705558885'; // Elim Trust WhatsApp number
+            final Uri url = Uri.parse('https://wa.me/$whatsappNumber');
+            if (!await launchUrl(url, mode: LaunchMode.externalApplication)) {
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(
+                    content: Text(
+                        'Could not open WhatsApp for $whatsappNumber. Please ensure WhatsApp is installed.')),
+              );
+              print('Could not launch $url');
+            }
+          },
+          backgroundColor: Colors.green,
+          tooltip: 'Chat on WhatsApp', // WhatsApp-like color
+          child: const Icon(FontAwesomeIcons.whatsapp, color: Colors.white),
+        ),
       
       
       
