@@ -339,7 +339,7 @@ class _LatestnewsPageState extends State<LatestnewsPage>
                           children: [
                             ElevatedButton(
                               onPressed: () {
-                                Navigator.pushNamed(context, '/readmore');
+                                Navigator.pushNamed(context, '/readmorelatestnews');
                               },
                               style: ElevatedButton.styleFrom(
                                 // Reduced padding to make the button smaller
