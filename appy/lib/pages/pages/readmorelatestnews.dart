@@ -88,6 +88,32 @@ child: Column(
     ),
 
 
+Align(
+  alignment: Alignment.centerLeft,
+  child: Padding(
+    padding: const EdgeInsets.all(8.0),
+  child: Text('💡 What is Mental Health?',
+  style: TextStyle(
+    color: Colors.black,
+    fontSize: 20,
+    fontWeight: FontWeight.bold,
+  ),
+  ),
+),
+),
+
+Padding(
+  padding: const EdgeInsets.all(10.0),
+  child: Text('''Mental health refers to our emotional, psychological, and social well-being. It influences how we think, feel, and act — and how we handle stress, relate to others, and make choices. Good mental health does not mean we are happy all the time, but that we have the strength and support to cope with life’s ups and downs.''',
+  style: TextStyle(
+    color: Colors.black,
+    fontSize: 15,
+  ),
+  ),
+),
+
+
+
 
 
     ],
