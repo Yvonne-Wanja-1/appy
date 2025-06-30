@@ -116,6 +116,106 @@ Padding(
 
 
 
+
+
+
+Align(
+  alignment: Alignment.centerLeft,
+  child: Padding(
+    padding: const EdgeInsets.all(8.0),
+  child: Text('🚩 Why Mental Health Awareness Matters',
+  style: TextStyle(
+    color: Colors.black,
+    fontSize: 20,
+    fontWeight: FontWeight.bold,
+  ),
+  ),
+),
+),
+
+Padding(
+  padding: const EdgeInsets.all(10.0),
+  child: Text('''1 in 4 people will experience a mental health issue at some point in their lives.
+
+Untreated mental health conditions can affect education, employment, relationships, and physical health.
+
+Stigma and lack of information stop many people from seeking the help they need.
+
+By raising awareness, we can break these barriers and create a community that cares.''',
+  style: TextStyle(
+    color: Colors.black,
+    fontSize: 15,
+  ),
+  ),
+),
+
+
+
+
+Align(
+  alignment: Alignment.centerLeft,
+  child: Padding(
+    padding: const EdgeInsets.all(8.0),
+  child: Text('🧠 Common Mental Health Challenges',
+  style: TextStyle(
+    color: Colors.black,
+    fontSize: 20,
+    fontWeight: FontWeight.bold,
+  ),
+  ),
+),
+),
+
+Padding(
+  padding: const EdgeInsets.all(10.0),
+  child: Text('''Depression: Persistent sadness, loss of interest in activities, feelings of worthlessness.
+
+Anxiety: Constant worry, fear, restlessness, and difficulty concentrating.
+
+Stress: Feeling overwhelmed or unable to cope with pressure.
+
+Trauma-related issues: Emotional wounds from past events that affect present well-being.''',
+  style: TextStyle(
+    color: Colors.black,
+    fontSize: 15,
+  ),
+  ),
+),
+
+
+
+Align(
+  alignment: Alignment.centerLeft,
+  child: Padding(
+    padding: const EdgeInsets.all(8.0),
+  child: Text('🤝 How We Can Support Each Other',
+  style: TextStyle(
+    color: Colors.black,
+    fontSize: 20,
+    fontWeight: FontWeight.bold,
+  ),
+  ),
+),
+),
+
+Padding(
+  padding: const EdgeInsets.all(10.0),
+  child: Text('''✅ Listen without judgment — Sometimes, a listening ear is the best help.
+✅ Encourage seeking help — Let’s normalize visiting a counselor or mental health professional.
+✅ Be kind — Small acts of kindness can make a big difference to someone struggling.
+✅ Educate yourself and others — The more we know, the better we can support.''',
+  style: TextStyle(
+    color: Colors.black,
+    fontSize: 15,
+  ),
+  ),
+),
+
+
+SizedBox(height: 20),
+
+
+
     ],
     
 ),
