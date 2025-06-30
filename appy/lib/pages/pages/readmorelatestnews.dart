@@ -56,7 +56,40 @@ body: SingleChildScrollView(
   physics: const BouncingScrollPhysics(),
 child: Column(
   children: [
-    
+    Padding(
+      padding: const EdgeInsets.all(10.0),
+      child: Text('''🌱 Prioritizing Mental Health: A Call for Awareness and Action''',
+      style: TextStyle(
+        color: Colors.black,
+        fontSize: 25,
+        fontWeight: FontWeight.bold,
+        
+      
+      
+      ),
+      ),
+    ),
+
+
+    Text('By Sarah Johnson - Published on January 15,2025',
+    style: TextStyle(
+      color: Colors.black,
+      fontSize: 15,
+      ),
+    ),
+
+
+    ClipRRect(
+      borderRadius: BorderRadius.circular(30),
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: ( Image.asset('images/blogsmental.jpg')),
+      ),
+    ),
+
+
+
+
     ],
     
 ),
