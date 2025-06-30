@@ -338,7 +338,9 @@ class _LatestnewsPageState extends State<LatestnewsPage>
                         child: Row(
                           children: [
                             ElevatedButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.pushNamed(context, '/readmore');
+                              },
                               style: ElevatedButton.styleFrom(
                                 // Reduced padding to make the button smaller
                                 padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
