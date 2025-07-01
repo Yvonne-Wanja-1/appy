@@ -79,7 +79,7 @@ class Readmoreblogs extends StatelessWidget {
               borderRadius: BorderRadius.circular(30),
               child: Padding(
                 padding: const EdgeInsets.all(0),
-                child: (Image.asset('images/blogsmental.jpg')),
+                child: (Image.asset('images/testimony2.jpg')),
               ),
             ),
   
