@@ -97,21 +97,40 @@ Elim Trust has not only inspired me but also equipped me with tools to care for 
             ),
            
             SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {},
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Image.asset('images/share.png', height: 20, width: 20, color: Colors.blue,),
-                  const SizedBox(width: 8),
-                  const Text('Share', 
-                  style: TextStyle(
-                    color: Colors.blue,
-                    fontSize: 15,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                ElevatedButton(
+                  onPressed: () {},
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Image.asset('images/share.png', height: 20, width: 20, color: Colors.blue,),
+                      const SizedBox(width: 10),
+                      const Text('Share', 
+                      style: TextStyle(
+                        color: Colors.blue,
+                        fontSize: 15,
+                      ),
+                      ),
+
+
+                      Icon(Icons.favorite_outline_outlined, color: Colors.red, size: 20,),
+
+
+                      ElevatedButton(onPressed: (){}, 
+                      child: Text('Donate', 
+                      style: TextStyle(
+                        color: Colors.blue,
+                        fontSize: 15,
+                      ),
+                      ),
+                      ),
+                      
+                    ],
                   ),
-                  ),
-                ],
-              ),
+                ),
+              ],
             ),
             SizedBox(height: 34),
           ],
