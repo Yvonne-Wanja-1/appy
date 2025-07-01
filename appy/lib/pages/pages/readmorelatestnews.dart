@@ -193,6 +193,22 @@ Trauma-related issues: Emotional wounds from past events that affect present wel
               ),
             ),
             SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {},
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Image.asset('images/share.png', height: 20, width: 20, color: Colors.blue,),
+                  const SizedBox(width: 8),
+                  const Text('Share', 
+                  style: TextStyle(
+                    color: Colors.blue,
+                    fontSize: 15,
+                  ),
+                  ),
+                ],
+              ),
+            )
           ],
         ),
       ),
