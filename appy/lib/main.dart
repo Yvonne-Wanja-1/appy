@@ -77,8 +77,10 @@ routes: {
   '/faqs': (context) => const FaqsPage(), // Add a FAQs page route
   '/change_password': (context) => const PasswordPage(), // 
   '/manage_account': (context) => const ManageAccountPage(),
+  
   '/readmorelatestnews': (context) => const Readmorelatestnews(),
-  '/readmoreblogs': (context)=> const Readmoreblogs(),
+  '/readmoreblogs': (context) => const Readmoreblogs(),
+  
 
 
 },
