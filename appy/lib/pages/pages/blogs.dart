@@ -327,7 +327,7 @@ class _BlogsPageState extends State<BlogsPage> with TickerProviderStateMixin {
                   child: ElevatedButton(
                     onPressed: () {
                       // Add functionality for the button here
-                      Navigator.pushNamed(context, '/story');
+                      Navigator.pushNamed(context, '/readmoreblogs');
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.blue, // Button color
