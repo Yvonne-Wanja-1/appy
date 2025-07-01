@@ -77,7 +77,7 @@ class Readmorelatestnews extends StatelessWidget {
             ClipRRect(
               borderRadius: BorderRadius.circular(30),
               child: Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(0),
                 child: (Image.asset('images/blogsmental.jpg')),
               ),
             ),
@@ -208,7 +208,8 @@ Trauma-related issues: Emotional wounds from past events that affect present wel
                   ),
                 ],
               ),
-            )
+            ),
+            SizedBox(height: 34),
           ],
         ),
       ),
