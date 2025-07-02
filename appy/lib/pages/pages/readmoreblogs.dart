@@ -79,7 +79,7 @@ class Readmoreblogs extends StatelessWidget {
               borderRadius: BorderRadius.circular(30),
               child: Padding(
                 padding: const EdgeInsets.all(0),
-                child: (Image.asset('images/blogsmental.jpg')),
+                child: (Image.asset('images/testimony2.jpg')),
               ),
             ),
   
@@ -96,23 +96,67 @@ Elim Trust has not only inspired me but also equipped me with tools to care for 
               ),
             ),
            
+        // ...existing code...
             SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {},
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Image.asset('images/share.png', height: 20, width: 20, color: Colors.blue,),
-                  const SizedBox(width: 8),
-                  const Text('Share', 
-                  style: TextStyle(
-                    color: Colors.blue,
-                    fontSize: 15,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center, // Center the row
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                ElevatedButton(
+                  onPressed: () {
+                    // TODO: Implement share functionality
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.white,
+                    elevation: 2,
                   ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Image.asset(
+                        'images/share.png',
+                        height: 20,
+                        width: 20,
+                        color: Colors.blue,
+                      ),
+                      const SizedBox(width: 8),
+                      const Text(
+                        'Share',
+                        style: TextStyle(
+                          color: Colors.blue,
+                          fontSize: 15,
+                        ),
+                      ),
+                    ],
                   ),
-                ],
-              ),
+                ),
+          SizedBox(width: 70,),
+                IconButton(
+                  onPressed: () {
+                    // TODO: Implement favorite functionality
+                  },
+                  icon: const Icon(
+                    Icons.favorite,
+                    color: Colors.red,
+                    size: 24,
+                  ),
+                ),
+                 SizedBox(width: 70,),
+                ElevatedButton(
+                  onPressed: () {
+                    // TODO: Implement donate functionality
+                  },
+                  child: const Text(
+                    'Donate',
+                    style: TextStyle(
+                      color: Colors.blue,
+                      fontSize: 15,
+                    ),
+                  ),
+                ),
+              ],
             ),
+// ...existing code...
             SizedBox(height: 34),
           ],
         ),
