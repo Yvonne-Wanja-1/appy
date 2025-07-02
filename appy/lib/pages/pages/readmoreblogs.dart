@@ -130,18 +130,18 @@ Elim Trust has not only inspired me but also equipped me with tools to care for 
                     ],
                   ),
                 ),
-          
+          SizedBox(width: 70,),
                 IconButton(
                   onPressed: () {
                     // TODO: Implement favorite functionality
                   },
                   icon: const Icon(
-                    Icons.favorite_outline_outlined,
+                    Icons.favorite,
                     color: Colors.red,
                     size: 24,
                   ),
                 ),
-               
+                 SizedBox(width: 70,),
                 ElevatedButton(
                   onPressed: () {
                     // TODO: Implement donate functionality
