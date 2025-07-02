@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:share_plus/share_plus.dart';
+
 
 class Readmoreblogs extends StatelessWidget {
   const Readmoreblogs ({super.key});
@@ -56,17 +58,7 @@ class Readmoreblogs extends StatelessWidget {
         physics: const BouncingScrollPhysics(),
         child: Column(
           children: [
-            // Padding(
-            //   padding: const EdgeInsets.all(10.0),
-            //   child: Text(
-            //     '''🌱 Prioritizing Mental Health: A Call for Awareness and Action''',
-            //     style: TextStyle(
-            //       color: Colors.black,
-            //       fontSize: 25,
-            //       fontWeight: FontWeight.bold,
-            //     ),
-            //   ),
-            // ),
+       
             Text(
               'By:  Yvonne Wanja - Published on August 3,2024',
               style: TextStyle(
@@ -104,7 +96,18 @@ Elim Trust has not only inspired me but also equipped me with tools to care for 
               children: [
                 ElevatedButton(
                   onPressed: () {
-                    // TODO: Implement share functionality
+                    const String blogTitle =
+                        '🌱 Prioritizing Mental Health: A Call for Awareness and Action';
+                    const String blogContent =
+                        '''I remember stumbling upon Elim Trust Blogs during one of the most challenging periods of my life. I was searching for comfort, guidance, and a sense of hope — and that’s exactly what I found. Every post spoke directly to my heart, reminding me that I am not alone in my struggles. The stories of resilience, the practical tips for mental wellness, and the encouragement to keep going gave me the strength I needed.
+
+Elim Trust has not only inspired me but also equipped me with tools to care for my mental health. I am truly grateful for this platform — it continues to be a light in my journey, and I would encourage anyone feeling overwhelmed to visit their blog. It might just change your life the way it changed mine.''';
+                    // You can replace this with the actual URL of the blog post
+                    const String blogUrl = 'https://elim-trust.org/blogs';
+                    final String shareText =
+                        '$blogTitle\n\n$blogContent\n\nRead more at: $blogUrl';
+
+                    Share.share(shareText, subject: blogTitle);
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.white,
@@ -144,7 +147,7 @@ Elim Trust has not only inspired me but also equipped me with tools to care for 
                  SizedBox(width: 70,),
                 ElevatedButton(
                   onPressed: () {
-                    // TODO: Implement donate functionality
+               Navigator.pushNamed(context, '/donations');
                   },
                   child: const Text(
                     'Donate',
