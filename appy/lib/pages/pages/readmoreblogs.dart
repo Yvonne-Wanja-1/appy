@@ -5,8 +5,34 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:share_plus/share_plus.dart';
 
 
-class Readmoreblogs extends StatelessWidget {
+class Readmoreblogs extends StatefulWidget {
   const Readmoreblogs ({super.key});
+
+  @override
+  State<Readmoreblogs> createState() => _ReadmoreblogsState();
+}
+
+class _ReadmoreblogsState extends State<Readmoreblogs> {
+  // A state variable to track whether the blog post is favorited.
+  // In a real application, you would likely save this to a database or
+  // local storage to persist the user's choice.
+  bool _isFavorited = false;
+
+  // This method is called when the favorite icon is tapped.
+  void _toggleFavorite() {
+    // setState rebuilds the widget with the new _isFavorited value.
+    setState(() {
+      _isFavorited = !_isFavorited;
+    });
+
+    // Show a confirmation message to the user for better feedback.
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(_isFavorited ? 'Added to your favorites.' : 'Removed from your favorites.'),
+        duration: const Duration(seconds: 1),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -131,12 +157,13 @@ Elim Trust has not only inspired me but also equipped me with tools to care for 
                 ),
           SizedBox(width: 70,),
                 IconButton(
-                  onPressed: () {
-                    // TODO: Implement favorite functionality
-                  },
-                  icon: const Icon(
-                    Icons.favorite,
-                    color: Colors.red,
+                  // Call the _toggleFavorite method when the button is pressed.
+                  onPressed: _toggleFavorite,
+                  icon: Icon(
+                    // Conditionally display a filled or bordered heart icon.
+                    _isFavorited ? Icons.favorite : Icons.favorite_border,
+                    // Conditionally set the color based on the favorite status.
+                    color: _isFavorited ? Colors.red : Colors.red,
                     size: 24,
                   ),
                 ),
