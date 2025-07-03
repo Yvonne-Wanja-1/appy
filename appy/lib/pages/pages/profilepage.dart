@@ -285,19 +285,18 @@ class _ProfilePageState extends State<ProfilePage> {
                         
                         
                         children: [
-                          const Text(
-                            
-                            'Personal Information:',
-                            style: TextStyle(
-                              fontSize: 24,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.blue,
+                          const Expanded(
+                            child: Text(
+                              'Personal Information:',
+                              style: TextStyle(
+                                fontSize: 24,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.blue,
+                              ),
                             ),
-                            textAlign: TextAlign.left,
                           ),
-                          const Spacer(),
                           Padding(
-                            padding: const EdgeInsets.all(40.0),
+                            padding: const EdgeInsets.only(right: 20.0),
                             child: Container(
                               height: 40,
                               width: 40,
