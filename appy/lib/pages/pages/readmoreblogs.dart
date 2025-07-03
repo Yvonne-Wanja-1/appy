@@ -28,8 +28,16 @@ class _ReadmoreblogsState extends State<Readmoreblogs> {
     // Show a confirmation message to the user for better feedback.
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
-        content: Text(_isFavorited ? 'Added to your favorites.' : 'Removed from your favorites.'),
+        // Set the content to a Text widget with blue color and bold font weight.
+        content: Text(
+          _isFavorited ? 'Added to your favorites.' : 'Removed from your favorites.',
+          style: const TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),
+        ),
         duration: const Duration(seconds: 1),
+        // Make the background transparent.
+        backgroundColor: Colors.transparent,
+        // Remove the shadow by setting elevation to 0.
+        elevation: 0,
       ),
     );
   }
