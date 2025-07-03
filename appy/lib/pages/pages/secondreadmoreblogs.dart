@@ -94,7 +94,7 @@ class _SecondReadmoreblogsState extends State<SecondReadmoreblogs> {
           children: [
        
             Text(
-              'By:  Yvonne Wanja - Published on August 3,2024',
+              'By:  Elim Trust Org - Published on October 12,2024',
               style: TextStyle(
                 color: Colors.black,
                 fontSize: 15,
@@ -112,9 +112,15 @@ class _SecondReadmoreblogsState extends State<SecondReadmoreblogs> {
             Padding(
               padding: const EdgeInsets.all(10.0),
               child: Text(
-                '''I remember stumbling upon Elim Trust Blogs during one of the most challenging periods of my life. I was searching for comfort, guidance, and a sense of hope — and that’s exactly what I found. Every post spoke directly to my heart, reminding me that I am not alone in my struggles. The stories of resilience, the practical tips for mental wellness, and the encouragement to keep going gave me the strength I needed.
+                '''Hope in Action: How Elim Trust is Changing Lives, One Step at a Time at Elim Trust Organisation
 
-Elim Trust has not only inspired me but also equipped me with tools to care for my mental health. I am truly grateful for this platform — it continues to be a light in my journey, and I would encourage anyone feeling overwhelmed to visit their blog. It might just change your life the way it changed mine.''',
+At Elim Trust Organisation, hope is not just a word — it’s a promise of change. Each day, the dedicated team at Elim works tirelessly to uplift the vulnerable, restore dignity, and offer practical support where it is needed most. From providing food and clothing to supporting education and offering counseling, Elim Trust turns compassion into concrete action.
+
+One of the most remarkable aspects of Elim Trust is its focus on empowering individuals and communities to break free from cycles of poverty and despair. Through skill-building workshops, mentorship programs, and community outreach initiatives, beneficiaries are not just given aid — they are equipped with tools to create lasting change in their own lives.
+
+The impact is evident in the smiles of children who can now attend school, in families who have regained stability, and in communities that are learning to stand together in strength and unity. Every donation, every volunteer hour, and every act of kindness fuels this mission, making a tangible difference one step at a time.
+
+Elim Trust Organisation continues to inspire hope — proving that when people come together with compassion and purpose, no challenge is too great to overcome.''',
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: 15,
@@ -137,9 +143,15 @@ Elim Trust has not only inspired me but also equipped me with tools to care for 
                         'A Testimony of Hope and Healing';
                     // The main content of the blog post.
                     const String blogContent =
-                        '''I remember stumbling upon Elim Trust Blogs during one of the most challenging periods of my life. I was searching for comfort, guidance, and a sense of hope — and that’s exactly what I found. Every post spoke directly to my heart, reminding me that I am not alone in my struggles. The stories of resilience, the practical tips for mental wellness, and the encouragement to keep going gave me the strength I needed.
+                        '''Hope in Action: How Elim Trust is Changing Lives, One Step at a Time at Elim Trust Organisation
 
-Elim Trust has not only inspired me but also equipped me with tools to care for my mental health. I am truly grateful for this platform — it continues to be a light in my journey, and I would encourage anyone feeling overwhelmed to visit their blog. It might just change your life the way it changed mine.''';
+At Elim Trust Organisation, hope is not just a word — it’s a promise of change. Each day, the dedicated team at Elim works tirelessly to uplift the vulnerable, restore dignity, and offer practical support where it is needed most. From providing food and clothing to supporting education and offering counseling, Elim Trust turns compassion into concrete action.
+
+One of the most remarkable aspects of Elim Trust is its focus on empowering individuals and communities to break free from cycles of poverty and despair. Through skill-building workshops, mentorship programs, and community outreach initiatives, beneficiaries are not just given aid — they are equipped with tools to create lasting change in their own lives.
+
+The impact is evident in the smiles of children who can now attend school, in families who have regained stability, and in communities that are learning to stand together in strength and unity. Every donation, every volunteer hour, and every act of kindness fuels this mission, making a tangible difference one step at a time.
+
+Elim Trust Organisation continues to inspire hope — proving that when people come together with compassion and purpose, no challenge is too great to overcome.''';
                     // A placeholder URL for the blog post.
                     const String blogUrl = 'https://elim-trust.org/blogs/testimony-of-hope';
                     // Construct the full text to be shared.
