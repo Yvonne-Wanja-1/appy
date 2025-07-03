@@ -94,43 +94,39 @@ Elim Trust has not only inspired me but also equipped me with tools to care for 
               mainAxisAlignment: MainAxisAlignment.center, // Center the row
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                ElevatedButton(
+                // Replaced ElevatedButton with OutlinedButton.icon for a cleaner look.
+                OutlinedButton.icon(
                   onPressed: () {
+                    // The title of the blog post to be shared.
+                    // In a real app, this would be passed dynamically to the widget.
                     const String blogTitle =
-                        '🌱 Prioritizing Mental Health: A Call for Awareness and Action';
+                        'A Testimony of Hope and Healing';
+                    // The main content of the blog post.
                     const String blogContent =
                         '''I remember stumbling upon Elim Trust Blogs during one of the most challenging periods of my life. I was searching for comfort, guidance, and a sense of hope — and that’s exactly what I found. Every post spoke directly to my heart, reminding me that I am not alone in my struggles. The stories of resilience, the practical tips for mental wellness, and the encouragement to keep going gave me the strength I needed.
 
 Elim Trust has not only inspired me but also equipped me with tools to care for my mental health. I am truly grateful for this platform — it continues to be a light in my journey, and I would encourage anyone feeling overwhelmed to visit their blog. It might just change your life the way it changed mine.''';
-                    // You can replace this with the actual URL of the blog post
-                    const String blogUrl = 'https://elim-trust.org/blogs';
+                    // A placeholder URL for the blog post.
+                    const String blogUrl = 'https://elim-trust.org/blogs/testimony-of-hope';
+                    // Construct the full text to be shared.
                     final String shareText =
                         '$blogTitle\n\n$blogContent\n\nRead more at: $blogUrl';
 
+                    // Use the share_plus package to trigger the native sharing dialog.
                     Share.share(shareText, subject: blogTitle);
                   },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.white,
-                    elevation: 2,
+                  // Use a standard share icon for consistency.
+                  icon: const Icon(Icons.share, color: Colors.blue, size: 20),
+                  label: const Text(
+                    'Share',
+                    style: TextStyle(
+                      color: Colors.blue,
+                      fontSize: 15,
+                    ),
                   ),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Image.asset(
-                        'images/share.png',
-                        height: 20,
-                        width: 20,
-                        color: Colors.blue,
-                      ),
-                      const SizedBox(width: 8),
-                      const Text(
-                        'Share',
-                        style: TextStyle(
-                          color: Colors.blue,
-                          fontSize: 15,
-                        ),
-                      ),
-                    ],
+                  // Style the button to have a blue outline.
+                  style: OutlinedButton.styleFrom(
+                    side: const BorderSide(color: Colors.blue),
                   ),
                 ),
           SizedBox(width: 70,),
