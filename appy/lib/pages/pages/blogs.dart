@@ -347,7 +347,7 @@ class _BlogsPageState extends State<BlogsPage> with TickerProviderStateMixin {
              GestureDetector(
               onTap: () {
                 // Add functionality for the blog post tap here
-                Navigator.pushNamed(context, '/story'); // Corrected route
+                Navigator.pushNamed(context, '/secondreadmoreblogs'); // Corrected route
               },
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start, // Align items to the top
@@ -414,7 +414,7 @@ class _BlogsPageState extends State<BlogsPage> with TickerProviderStateMixin {
                   child: ElevatedButton(
                     onPressed: () {
                       // Add functionality for the button here
-                      Navigator.pushNamed(context, '/story');
+                      Navigator.pushNamed(context, '/secondreadmoreblogs');
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.blue, // Button color
