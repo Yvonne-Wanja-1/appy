@@ -19,6 +19,7 @@ import 'package:elim_trust_2/pages/pages/profilepage.dart';
 import 'package:elim_trust_2/pages/pages/projects.dart';
 import 'package:elim_trust_2/pages/pages/readmoreblogs.dart';
 import 'package:elim_trust_2/pages/pages/readmorelatestnews.dart';
+import 'package:elim_trust_2/pages/pages/secondreadmoreblogs.dart';
 import 'package:elim_trust_2/pages/pages/settings.dart';
 import 'package:elim_trust_2/pages/pages/signin.dart';
 import 'package:elim_trust_2/pages/pages/signout.dart';
@@ -80,6 +81,8 @@ routes: {
   
   '/readmorelatestnews': (context) => const Readmorelatestnews(),
   '/readmoreblogs': (context) => const Readmoreblogs(),
+  '/secondreadmoreblogs': (context) => const SecondReadmoreblogs(),
+  // Add more routes as needed'
   
 
 
