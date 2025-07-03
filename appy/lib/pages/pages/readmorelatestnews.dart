@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:share_plus/share_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Readmorelatestnews extends StatelessWidget {
@@ -193,20 +194,28 @@ Trauma-related issues: Emotional wounds from past events that affect present wel
               ),
             ),
             SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {},
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Image.asset('images/share.png', height: 20, width: 20, color: Colors.blue,),
-                  const SizedBox(width: 8),
-                  const Text('Share', 
-                  style: TextStyle(
+            OutlinedButton.icon(
+              onPressed: () {
+                const String blogTitle =
+                    '🌱 Prioritizing Mental Health: A Call for Awareness and Action';
+                const String blogUrl =
+                    'https://www.elim-trust.org/blog/mental-health-awareness'; // A placeholder URL
+                final String shareText =
+                    'Check out this insightful blog post: "$blogTitle".\n\nRead more here: $blogUrl';
+
+                Share.share(shareText,
+                    subject: 'An Important Read on Mental Health');
+              },
+              icon: const Icon(Icons.share, color: Colors.blue, size: 20),
+              label: const Text(
+                'Share',
+                style: TextStyle(
                     color: Colors.blue,
                     fontSize: 15,
-                  ),
-                  ),
-                ],
+              ),
+              ),
+              style: OutlinedButton.styleFrom(
+                side: const BorderSide(color: Colors.blue),
               ),
             ),
             SizedBox(height: 34),
