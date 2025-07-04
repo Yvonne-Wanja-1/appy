@@ -1,6 +1,6 @@
 import 'dart:io'; // Required for File operations
 
-import 'package:elim_trust_2/pages/pages/searchpage.dart';
+import 'package:elim_trust_2/pages/pages/searchpagelatestnews.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show ByteData, rootBundle; // Required for rootBundle
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';

@@ -1,5 +1,6 @@
 import 'dart:io'; // Required for File operations
 
+import 'package:elim_trust_2/pages/pages/searchpageblogs.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show ByteData, rootBundle; // Required for rootBundle
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -236,22 +237,31 @@ class _BlogsPageState extends State<BlogsPage> with TickerProviderStateMixin {
                     ],
                   ),
                 ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    const Icon(Icons.search_rounded, color: Colors.white, size: 30),
-                    const SizedBox(width: 8.0),
-                    Text( // Removed 'const' as GoogleFonts style is not constant
-                'Search for blogs...',
-                style: GoogleFonts.dancingScript(
-                  fontSize: 19,
-                  color: Colors.white, // Note: Consider changing for better contrast
-                  fontWeight: FontWeight.bold,
-                ),
-                textAlign: TextAlign.center,
-              ),
-                  ],
+                child: GestureDetector(
+                     onTap: () {
+                  // Add functionality for the search bar tap here
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const Searchpageblogs()),
+                  );
+                     },
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      const Icon(Icons.search_rounded, color: Colors.white, size: 30),
+                      const SizedBox(width: 8.0),
+                      Text( // Removed 'const' as GoogleFonts style is not constant
+                  'Search for blogs...',
+                  style: GoogleFonts.dancingScript(
+                    fontSize: 19,
+                    color: Colors.white, // Note: Consider changing for better contrast
+                    fontWeight: FontWeight.bold,
+                  ),
+                  textAlign: TextAlign.center,
+                                ),
+                    ],
+                  ),
                 ),
               ),
             ),
