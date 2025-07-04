@@ -702,6 +702,7 @@ const SizedBox(height: 20), // Added space between title and partners section
           
              SingleChildScrollView(
               scrollDirection: Axis.horizontal,
+              clipBehavior: Clip.none, // Allow shadow to render outside the bounds
                child: Row(
                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -717,7 +718,7 @@ const SizedBox(height: 20), // Added space between title and partners section
                           color: Colors.blue, // Shadow color
                           spreadRadius: 2,
                           blurRadius: 5,
-                          offset: Offset(0, 3), // changes position of shadow
+                          offset: Offset(0, 0), // Set to (0,0) to show shadow on all sides
                         ),
                       ],
                     ),
@@ -746,7 +747,7 @@ const SizedBox(height: 20), // Added space between title and partners section
                           color: Colors.blue, // Shadow color
                           spreadRadius: 2,
                           blurRadius: 5,
-                          offset: Offset(0, 3), // changes position of shadow
+                          offset: Offset(0, 0), // Set to (0,0) to show shadow on all sides
                         ),
                       ],
                     ),
@@ -783,7 +784,7 @@ const SizedBox(height: 20), // Added space between title and partners section
                           color: Colors.blue, // Shadow color
                           spreadRadius: 2,
                           blurRadius: 5,
-                          offset: Offset(0, 3), // changes position of shadow
+                          offset: Offset(0, 0), // Set to (0,0) to show shadow on all sides
                         ),
                       ],
                     ),
@@ -817,7 +818,7 @@ const SizedBox(height: 20), // Added space between title and partners section
                           color: Colors.blue, // Shadow color
                           spreadRadius: 2,
                           blurRadius: 5,
-                          offset: Offset(0, 3), // changes position of shadow
+                          offset: Offset(0, 0), // Set to (0,0) to show shadow on all sides
                         ),
                       ],
                     ),
@@ -847,7 +848,7 @@ const SizedBox(height: 20), // Added space between title and partners section
                           color: Colors.blue, // Shadow color
                           spreadRadius: 2,
                           blurRadius: 5,
-                          offset: Offset(0, 3), // changes position of shadow
+                          offset: Offset(0, 0), // Set to (0,0) to show shadow on all sides
                         ),
                       ],
                     ),
@@ -877,7 +878,7 @@ const SizedBox(height: 20), // Added space between title and partners section
                           color: Colors.blue, // Shadow color
                           spreadRadius: 2,
                           blurRadius: 5,
-                          offset: Offset(0, 3), // changes position of shadow
+                          offset: Offset(0, 0), // Set to (0,0) to show shadow on all sides
                         ),
                       ],
                     ),
