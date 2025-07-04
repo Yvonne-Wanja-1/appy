@@ -161,58 +161,64 @@ class _DonationsPageState extends State<DonationsPage> with SingleTickerProvider
                 ),
               ),
               const SizedBox(height: 30),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.blue,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.blue,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10),
+                        ),
                       ),
+                      onPressed: () {
+                        // Handle 100 KES donation
+                      },
+                      child: const Text('100 KES', style: TextStyle(color: Colors.white)),
                     ),
-                    onPressed: () {
-                      // Handle 100 KES donation
-                    },
-                    child: const Text('100 KES', style: TextStyle(color: Colors.white)),
-                  ),
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.blue,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
+                    SizedBox(width: 10),
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.blue,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10),
+                        ),
                       ),
+                      onPressed: () {
+                        // Handle 200 KES donation
+                      },
+                      child: const Text('200 KES', style: TextStyle(color: Colors.white)),
                     ),
-                    onPressed: () {
-                      // Handle 200 KES donation
-                    },
-                    child: const Text('200 KES', style: TextStyle(color: Colors.white)),
-                  ),
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.blue,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
+                    SizedBox(width: 10),
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.blue,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10),
+                        ),
                       ),
+                      onPressed: () {
+                        // Handle 500 KES donation
+                      },
+                      child: const Text('500 KES', style: TextStyle(color: Colors.white)),
                     ),
-                    onPressed: () {
-                      // Handle 500 KES donation
-                    },
-                    child: const Text('500 KES', style: TextStyle(color: Colors.white)),
-                  ),
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.blue,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
+                    SizedBox(width: 10),
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.blue,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10),
+                        ),
                       ),
+                      onPressed: () {
+                        // Handle 1000 KES donation
+                      },
+                      child: const Text('1000 KES', style: TextStyle(color: Colors.white)),
                     ),
-                    onPressed: () {
-                      // Handle 1000 KES donation
-                    },
-                    child: const Text('1000 KES', style: TextStyle(color: Colors.white)),
-                  ),
-                ],
+                  ],
+                ),
               ),
               const SizedBox(height: 10),
               Padding(

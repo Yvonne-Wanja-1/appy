@@ -156,23 +156,30 @@ class _ProfilePageState extends State<ProfilePage> {
                     onTap: () {
                       Navigator.pushNamed(context, '/settings');
                     },
-                    child: Container(
-                      margin: const EdgeInsets.only(right: 5),
-                      height: 40,
-                      width: 40,
-                      decoration: const BoxDecoration(
-                        color: Colors.white,
-                        shape: BoxShape.circle,
-                      ),
-                      child: IconButton(
-                        icon: const Icon(Icons.settings),
-                        color: Colors.blue,
-                        onPressed: () {
-                          // Action for settings button
-                          Navigator.pushNamed(context, '/settings');
-                        },
-                      ),
+                  child: Container(
+                    margin: const EdgeInsets.only(right: 5),
+                    height: 40,
+                    width: 40,
+                    decoration: const BoxDecoration(
+                      color: Colors.white,
+                      shape: BoxShape.circle,
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.red,
+                          blurRadius: 2.0,
+                          offset: Offset(0, 2), // Shadow position
+                        ),
+                      ],
                     ),
+                    child: IconButton(
+                      icon: const Icon(Icons.settings),
+                      color: Colors.blue,
+                      onPressed: () {
+                        // Action for settings button
+                        Navigator.pushNamed(context, '/settings');
+                      },
+                    ),
+                  ),
                   ),
                 ],
                 leading: Padding(
@@ -183,6 +190,13 @@ class _ProfilePageState extends State<ProfilePage> {
                     decoration: const BoxDecoration(
                       color: Colors.white,
                       shape: BoxShape.circle,
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.red,
+                          blurRadius: 2.0,
+                          offset: Offset(0, 2), // Shadow position
+                        ),
+                      ],
                     ),
                     child: IconButton(
                       icon: const Icon(Icons.arrow_back, color: Colors.blue),
@@ -271,19 +285,18 @@ class _ProfilePageState extends State<ProfilePage> {
                         
                         
                         children: [
-                          const Text(
-                            
-                            'Personal Information:',
-                            style: TextStyle(
-                              fontSize: 24,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.blue,
+                          const Expanded(
+                            child: Text(
+                              'Personal Information:',
+                              style: TextStyle(
+                                fontSize: 24,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.blue,
+                              ),
                             ),
-                            textAlign: TextAlign.left,
                           ),
-                          const Spacer(),
                           Padding(
-                            padding: const EdgeInsets.all(40.0),
+                            padding: const EdgeInsets.only(right: 20.0),
                             child: Container(
                               height: 40,
                               width: 40,
@@ -434,6 +447,26 @@ class _ProfilePageState extends State<ProfilePage> {
               ],
             ),
           ),
+          floatingActionButton:
+            FloatingActionButton(
+              onPressed: () async {
+                // Direct WhatsApp link to Elim Trust
+                const String whatsappNumber =
+                    '254705558885'; // Elim Trust WhatsApp number
+                final Uri url = Uri.parse('https://wa.me/$whatsappNumber');
+                if (!await launchUrl(url, mode: LaunchMode.externalApplication)) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                        content: Text(
+                            'Could not open WhatsApp for $whatsappNumber. Please ensure WhatsApp is installed.')),
+                  );
+                  print('Could not launch $url');
+                }
+              },
+              backgroundColor: Colors.green,
+              tooltip: 'Chat on WhatsApp', // WhatsApp-like color
+              child: const Icon(FontAwesomeIcons.whatsapp, color: Colors.white),
+            ),
           bottomNavigationBar: CurvedNavigationBar(
             backgroundColor: Colors.transparent,
             color: const Color.fromARGB(255, 4, 135, 242),
@@ -530,29 +563,6 @@ class _ProfilePageState extends State<ProfilePage> {
               }
             },
           ),
-
-
-
-          floatingActionButton:
-    FloatingActionButton(
-      onPressed: () async {
-        // Direct WhatsApp link to Elim Trust
-        const String whatsappNumber =
-            '254705558885'; // Elim Trust WhatsApp number
-        final Uri url = Uri.parse('https://wa.me/$whatsappNumber');
-        if (!await launchUrl(url, mode: LaunchMode.externalApplication)) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(
-                content: Text(
-                    'Could not open WhatsApp for $whatsappNumber. Please ensure WhatsApp is installed.')),
-          );
-          print('Could not launch $url');
-        }
-      },
-      backgroundColor: Colors.green,
-      tooltip: 'Chat on WhatsApp', // WhatsApp-like color
-      child: const Icon(FontAwesomeIcons.whatsapp, color: Colors.white),
-    ),
         ),
     );
   }
