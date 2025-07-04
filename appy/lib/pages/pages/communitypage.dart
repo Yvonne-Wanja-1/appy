@@ -468,7 +468,10 @@ actions: [
               // mainAxisAlignment: MainAxisAlignment.spaceEvenly, // Removed this
               children: [
                 GestureDetector(
-                  onDoubleTap: (){},
+                  onDoubleTap: (){
+                    //navigation:
+                    Navigator.pushNamed(context, '/albert');
+                  },
                   child: Card(
                    // color: Colors.grey,
                     shape: RoundedRectangleBorder(
@@ -538,7 +541,10 @@ actions: [
                 ),
                 const SizedBox(width: 16), // Added space between cards
                 GestureDetector( // Second Impact Story Card
-                  onDoubleTap: (){},
+                  onDoubleTap: (){
+                    //navigation:
+                    Navigator.pushNamed(context, '/pastor');
+                  },
                   child: Card(
                     // color: Colors.blue, // Removed color to match the first card (default white)
                     shape: RoundedRectangleBorder(
@@ -607,7 +613,9 @@ actions: [
                 ),
                 const SizedBox(width: 16), // Added space between cards
                 GestureDetector( // Third Impact Story Card
-                  onDoubleTap: (){},
+                  onDoubleTap: (){
+                    Navigator.pushNamed(context, '/jane');
+                  },
                   child: Card(
                     // color: Colors.blue, // Removed color to match the first card (default white)
                     shape: RoundedRectangleBorder(
