@@ -82,10 +82,12 @@ class _DonationsPageState extends State<DonationsPage> with SingleTickerProvider
             ),
           ),
           actions: <Widget>[
-            TextButton(child: const Text('Cancel'), onPressed: () => Navigator.of(context).pop()),
-            TextButton(child: const Text('Submit'), onPressed: () {
-              // Handle payment submission logic
-              Navigator.of(context).pop();
+            TextButton(child: const Text('Cancel', style: TextStyle(color: Colors.blue)), onPressed: () => Navigator.of(context).pop()),
+            TextButton(child: const Text('Submit', style: TextStyle(color: Colors.blue)), onPressed: () {
+         
+         
+         
+         
             }),
           ],
         );
