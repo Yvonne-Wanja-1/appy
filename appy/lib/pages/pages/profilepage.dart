@@ -304,6 +304,13 @@ class _ProfilePageState extends State<ProfilePage> {
                               decoration: const BoxDecoration(
                                 color: Colors.blue,
                                 shape: BoxShape.circle,
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.red,
+                                    blurRadius: 2.0,
+                                    offset: Offset(0, 0), // Set to (0,0) to show shadow on all sides
+                                  ),
+                                ],
                               ),
                               child: Center(
                                 child: IconButton(
