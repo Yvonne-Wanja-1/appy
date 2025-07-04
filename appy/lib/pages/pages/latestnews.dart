@@ -1,5 +1,6 @@
 import 'dart:io'; // Required for File operations
 
+import 'package:elim_trust_2/pages/pages/searchpage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show ByteData, rootBundle; // Required for rootBundle
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -7,6 +8,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:open_file/open_file.dart'; // Required for OpenFile
 import 'package:path_provider/path_provider.dart'; // Required for getTemporaryDirectory
 import 'package:url_launcher/url_launcher.dart'; // Required for launching URLs
+
 
 class LatestnewsPage extends StatefulWidget {
   const LatestnewsPage({super.key});
@@ -217,7 +219,10 @@ class _LatestnewsPageState extends State<LatestnewsPage>
               // Search Bar Section
               GestureDetector(
                 onTap: () {
-                  // Add functionality for the search bar tap here
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const SearchPage()),
+                  );
                 },
                 child: Container(
                   margin: const EdgeInsets.all(30.0),
