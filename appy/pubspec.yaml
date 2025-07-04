@@ -30,6 +30,7 @@ dependencies:
   youtube_player_flutter: ^9.1.1
 
   open_file: ^3.5.10
+  flutter_inappwebview: ^6.1.5
  
   
 
