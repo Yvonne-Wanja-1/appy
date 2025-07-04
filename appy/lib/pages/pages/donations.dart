@@ -87,7 +87,7 @@ class _DonationsPageState extends State<DonationsPage> with SingleTickerProvider
          
          
          
-         ;
+         
             }),
           ],
         );
