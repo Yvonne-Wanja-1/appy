@@ -218,6 +218,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 // Profile Picture
                 Center(
                   child: Stack(
+                    clipBehavior: Clip.none, // Allow shadow to render outside the bounds
                     children: [
                       CircleAvatar(
                         radius: 50,
@@ -236,9 +237,9 @@ class _ProfilePageState extends State<ProfilePage> {
             shape: BoxShape.circle, // Circular badge
             border: Border.all(color: Colors.white, width: 2), 
             boxShadow: const [ BoxShadow(
-              color: Color.fromARGB(66, 227, 8, 8),
+              color: Colors.red,
               blurRadius: 2.0,
-              offset: Offset(0, 2), // Shadow position
+              offset: Offset(0, 0), // Set to (0,0) to show shadow on all sides
             ),
             ],
           ),
@@ -303,6 +304,13 @@ class _ProfilePageState extends State<ProfilePage> {
                               decoration: const BoxDecoration(
                                 color: Colors.blue,
                                 shape: BoxShape.circle,
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.red,
+                                    blurRadius: 2.0,
+                                    offset: Offset(0, 0), // Set to (0,0) to show shadow on all sides
+                                  ),
+                                ],
                               ),
                               child: Center(
                                 child: IconButton(
