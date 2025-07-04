@@ -493,7 +493,7 @@ class _DonationsPageState extends State<DonationsPage> with SingleTickerProvider
                const Align(
                 alignment: Alignment.centerLeft,
                 child: Padding(
-                  padding: EdgeInsets.all(8.0),
+                  padding: EdgeInsets.only(left: 12.0, top: 8.0),
                   child: Text(
                     'Your Donations:',
                     textAlign: TextAlign.left,
@@ -508,7 +508,7 @@ class _DonationsPageState extends State<DonationsPage> with SingleTickerProvider
              // const SizedBox(height: 10),
 //dropdownbuttontextfield with dropdown menu:
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(10.0),
                 child: DropdownButtonFormField<String>(
                   decoration: InputDecoration(
                     prefixIcon: const Icon(Icons.list, color: Colors.blue),
