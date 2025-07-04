@@ -150,14 +150,17 @@ class _DonationsPageState extends State<DonationsPage> with SingleTickerProvider
                 ),
               ),
               const SizedBox(height: 3),
-              const Text(
-                'Your donations help us continue our mission and support those in need. Every contribution counts, no matter how small.',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontFamily: 'Arial',
-                  fontStyle: FontStyle.italic,
-                  fontSize: 16,
-                  color: Color.fromARGB(255, 120, 165, 201),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: const Text(
+                  'Your donations help us continue our mission and support those in need. Every contribution counts, no matter how small.',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontFamily: 'Arial',
+                    fontStyle: FontStyle.italic,
+                    fontSize: 16,
+                    color: Color.fromARGB(255, 120, 165, 201),
+                  ),
                 ),
               ),
               const SizedBox(height: 30),
