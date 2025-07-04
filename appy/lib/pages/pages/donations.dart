@@ -615,20 +615,23 @@ const SizedBox(
             ),
             const SizedBox(height: 10),
 
-const Row(
+const Column(
   mainAxisAlignment: MainAxisAlignment.center,
   children: [
-    Text(
-      'Thank you for your generosity! Your support makes a difference!',
-      textAlign: TextAlign.center,
-      style: TextStyle(
-        fontSize: 16,
-        fontStyle: FontStyle.italic,
-        color: Colors.grey,
+    Padding(
+      padding: EdgeInsets.all(8.0),
+      child: Text(
+        '''Thank you for your generosity! Your support makes a difference!''',
+        textAlign: TextAlign.center,
+        style: TextStyle(
+          fontSize: 16,
+          fontStyle: FontStyle.italic,
+          color: Colors.grey,
+        ),
       ),
     ),
 
-    Text('🤩✨'),
+    Text('''🤩✨'''),
     ],
 ),
             const SizedBox(height: 70), // Added space for bottom navigation bar
