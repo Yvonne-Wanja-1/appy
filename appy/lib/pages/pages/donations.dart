@@ -34,27 +34,47 @@ class _DonationsPageState extends State<DonationsPage> with SingleTickerProvider
     );
     _selectedPaymentMethod = null; // Initialize with no selection
   }
-
+//credit card
   void _showCreditCardDialog() {
     showDialog(
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: const Text('Enter Card Details'),
+          title: const Text('Enter Card Details',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            color: Colors.blue,
+            //fontSize: 20,
+            fontStyle: FontStyle.italic,
+            fontFamily: 'Arial',
+          ),
+          
+          ),
           content: SingleChildScrollView(
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
                 const TextField(
-                  decoration: InputDecoration(labelText: 'Card Number'),
+                  decoration: InputDecoration(
+                    labelText: 'Card Number',
+                    labelStyle: TextStyle(color: Colors.black),
+                    prefixIcon: Icon(Icons.credit_card, color: Colors.blue),
+                  ),
                   keyboardType: TextInputType.number,
                 ),
                 const TextField(
-                  decoration: InputDecoration(labelText: 'Expiry Date (MM/YY)'),
+                  decoration: InputDecoration(labelText: 'Expiry Date (MM/YY)',
+                  labelStyle: TextStyle(color: Colors.black),
+
+                  
+                  ),
                   keyboardType: TextInputType.datetime,
                 ),
                 const TextField(
-                  decoration: InputDecoration(labelText: 'CVV'),
+                  decoration: InputDecoration(labelText: 'CVV',
+                  
+                  labelStyle: TextStyle(color: Colors.black),
+                  ),
                   keyboardType: TextInputType.number,
                   obscureText: true,
                 ),
@@ -369,7 +389,7 @@ class _DonationsPageState extends State<DonationsPage> with SingleTickerProvider
               ),
 
 
-
+//paypal
                Card(
                 margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                 shape: RoundedRectangleBorder(
