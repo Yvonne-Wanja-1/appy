@@ -1,5 +1,6 @@
 
 
+import 'package:elim_trust_2/pages/pages/albert.dart';
 import 'package:elim_trust_2/pages/pages/blogs.dart';
 import 'package:elim_trust_2/pages/pages/capacity.dart';
 import 'package:elim_trust_2/pages/pages/changepassword.dart';
@@ -12,9 +13,11 @@ import 'package:elim_trust_2/pages/pages/faqs.dart';
 import 'package:elim_trust_2/pages/pages/feedback.dart';
 import 'package:elim_trust_2/pages/pages/gallery.dart';
 import 'package:elim_trust_2/pages/pages/homepage.dart';
+import 'package:elim_trust_2/pages/pages/jane.dart';
 import 'package:elim_trust_2/pages/pages/latestnews.dart';
 import 'package:elim_trust_2/pages/pages/manageaccount.dart';
 import 'package:elim_trust_2/pages/pages/mats.dart';
+import 'package:elim_trust_2/pages/pages/pastor.dart';
 import 'package:elim_trust_2/pages/pages/profilepage.dart';
 import 'package:elim_trust_2/pages/pages/projects.dart';
 import 'package:elim_trust_2/pages/pages/readmoreblogs.dart';
@@ -83,6 +86,10 @@ routes: {
   '/readmoreblogs': (context) => const Readmoreblogs(),
   '/secondreadmoreblogs': (context) => const SecondReadmoreblogs(),
   // Add more routes as needed'
+  '/albert': (context) => const AlbertPage(),
+  '/pastor': (context) => const PastorPage(),
+  '/jane': (context) => const JanePage(),
+  // Add more routes as needed''
   
 
 
