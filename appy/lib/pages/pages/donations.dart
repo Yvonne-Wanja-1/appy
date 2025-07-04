@@ -2,6 +2,7 @@ import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:elim_trust_2/widgets/textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:flutter/services.dart';
 
 class DonationsPage extends StatefulWidget {
   const DonationsPage({super.key});
@@ -17,6 +18,8 @@ class _DonationsPageState extends State<DonationsPage> with SingleTickerProvider
   final TextEditingController _emailController = TextEditingController(); // Controller for email input
   final TextEditingController _namecontroller = TextEditingController(); // Controller for name input
   final TextEditingController _confirmemailController = TextEditingController(); // Controller for confirm email input
+  final TextEditingController _otherAmountController = TextEditingController();
+  String? _otherAmountErrorText;
   int _selectedIndex = 1; // Variable to track the selected index for navigation
 
   @override
@@ -231,6 +234,7 @@ class _DonationsPageState extends State<DonationsPage> with SingleTickerProvider
               Padding(
                 padding: const EdgeInsets.all(28.0),
                 child: TextField(
+                  controller: _otherAmountController,
                   decoration: InputDecoration(
                     prefixIcon: const Icon(Icons.monetization_on, color: Colors.blue),
                     filled: true,
@@ -242,8 +246,22 @@ class _DonationsPageState extends State<DonationsPage> with SingleTickerProvider
                     ),
                     hintText: 'eg. 75,000 KES',
                     hintStyle: const TextStyle(color: Colors.grey),
+                    errorText: _otherAmountErrorText,
                   ),
                   keyboardType: TextInputType.number,
+                  onChanged: (value) {
+                    // Using an if statement to validate the input
+                    if (value.isEmpty) {
+                      // If the field is empty, clear any previous error.
+                      setState(() => _otherAmountErrorText = null);
+                      return;
+                    }
+                    // This regular expression checks if the string contains only digits 0-9.
+                    final isDigitsOnly = RegExp(r'^[0-9]+$').hasMatch(value);
+                    setState(() {
+                      _otherAmountErrorText = isDigitsOnly ? null : 'Please enter only numbers.';
+                    });
+                  },
                   onSubmitted: (value) {
                     // Handle custom donation amount
                   },
@@ -722,6 +740,7 @@ const Column(
     _namecontroller.dispose(); // Dispose the name controller
     _emailController.dispose(); // Dispose the email controller
     _confirmemailController.dispose(); // Dispose the confirm email controller
+    _otherAmountController.dispose();
     super.dispose(); // Must be the last call
   }
 }
