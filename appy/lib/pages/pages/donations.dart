@@ -35,6 +35,44 @@ class _DonationsPageState extends State<DonationsPage> with SingleTickerProvider
     _selectedPaymentMethod = null; // Initialize with no selection
   }
 
+  void _showCreditCardDialog() {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('Enter Card Details'),
+          content: SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                const TextField(
+                  decoration: InputDecoration(labelText: 'Card Number'),
+                  keyboardType: TextInputType.number,
+                ),
+                const TextField(
+                  decoration: InputDecoration(labelText: 'Expiry Date (MM/YY)'),
+                  keyboardType: TextInputType.datetime,
+                ),
+                const TextField(
+                  decoration: InputDecoration(labelText: 'CVV'),
+                  keyboardType: TextInputType.number,
+                  obscureText: true,
+                ),
+              ],
+            ),
+          ),
+          actions: <Widget>[
+            TextButton(child: const Text('Cancel'), onPressed: () => Navigator.of(context).pop()),
+            TextButton(child: const Text('Submit'), onPressed: () {
+              // Handle payment submission logic
+              Navigator.of(context).pop();
+            }),
+          ],
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -284,25 +322,22 @@ class _DonationsPageState extends State<DonationsPage> with SingleTickerProvider
               ),
              
              
-
+//debit/credit card
               Card(
                 margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(15),
                 ),
                 child: ListTile(
-                  leading: GestureDetector(
-                    onTap: () {
-                      // Handle M-Pesa selection logic here
-                    },
-                    child: Container(
-                      height: 40,
-                      width: 40,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: Image.asset('images/card.png', fit: BoxFit.cover, color: Colors.blue),),
+                  onTap: () {
+                    setState(() => _selectedPaymentMethod = 'card');
+                    _showCreditCardDialog();
+                  },
+                  leading: Container(
+                    height: 40,
+                    width: 40,
+                    decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(10)),
+                    child: Image.asset('images/card.png', fit: BoxFit.cover, color: Colors.blue),
                   ),
                   title: const Center(
                     child: Text('Credit/Debit Card', 
@@ -325,7 +360,9 @@ class _DonationsPageState extends State<DonationsPage> with SingleTickerProvider
                       setState(() {
                         _selectedPaymentMethod = value;
                       });
-                      // Handle card selection logic here
+                      if (value == 'card') {
+                        _showCreditCardDialog();
+                      }
                     },
                   ),
                 ),
@@ -339,18 +376,14 @@ class _DonationsPageState extends State<DonationsPage> with SingleTickerProvider
                   borderRadius: BorderRadius.circular(15),
                 ),
                 child: ListTile(
-                  leading: GestureDetector(
-                    onTap: () {
-                      // Handle M-Pesa selection logic here
-                    },
-                    child: Container(
-                      height: 40,
-                      width: 40,
-                      decoration: BoxDecoration(
-                        //color: Colors.blueAccent,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: Image.asset('images/paypal.png',  fit: BoxFit.cover,),),
+                  onTap: () => setState(() => _selectedPaymentMethod = 'paypal'),
+                  leading: Container(
+                    height: 40,
+                    width: 40,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Image.asset('images/paypal.png',  fit: BoxFit.cover,),
                   ),
                   title: const Center(
                     child: Text('PayPal', 
@@ -373,7 +406,6 @@ class _DonationsPageState extends State<DonationsPage> with SingleTickerProvider
                       setState(() {
                         _selectedPaymentMethod = value;
                       });
-                      // Handle PayPal selection logic here
                     },
                   ),
                 ),
@@ -386,45 +418,43 @@ class _DonationsPageState extends State<DonationsPage> with SingleTickerProvider
                   borderRadius: BorderRadius.circular(15),
                 ),
                 child: ListTile(
-                  leading: GestureDetector(
-                    onTap: () {
-                      // Handle M-Pesa selection logic here
-                    },
-                    child: Container(
-                      height: 40,
-                      width: 40,
-                      decoration: BoxDecoration(
-                       // color: Colors.blueAccent,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child:Image.asset('images/applepay.png', fit: BoxFit.cover,)),
+                  onTap: () => setState(() => _selectedPaymentMethod = 'applepay'),
+                  leading: Container(
+                    height: 40,
+                    width: 40,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Image.asset('images/applepay.png', fit: BoxFit.cover,),
                   ),
                   title: const Center(
                     child: Text('Apple Pay', 
-                    style: TextStyle(fontSize: 18, fontWeight: 
-                    FontWeight.bold, color: Colors.blue,),),
+                      style: TextStyle(fontSize: 18, fontWeight: 
+                        FontWeight.bold, color: Colors.blue,),
+                    ),
                   ),
-
                   subtitle: const Center(
                     child: Text('Secure payment via Apple Pay', 
-                    style: TextStyle(fontSize: 16, 
-                    fontStyle: FontStyle.italic,
-                    fontFamily: 'Arial',
-                    color: Color.fromARGB(255, 107, 162, 207)),),
+                      style: TextStyle(fontSize: 16, 
+                        fontStyle: FontStyle.italic,
+                        fontFamily: 'Arial',
+                        color: Color.fromARGB(255, 107, 162, 207)),
+                    ),
                   ),
-                  trailing: Radio<String>(
-                    value: 'applepay', // Unique value for Apple Pay
-                    groupValue: _selectedPaymentMethod,
-                    activeColor: Colors.blue,
-                    onChanged: (String? value) {
-                      setState(() {
-                        _selectedPaymentMethod = value;
-                      });
-                      // Handle Apple Pay selection logic here
-                    },
+                    trailing: Radio<String>(
+                      value: 'applepay', // Unique value for Apple Pay
+                      groupValue: _selectedPaymentMethod,
+                      activeColor: Colors.blue,
+                      onChanged: (String? value) {
+                        setState(() {
+                          _selectedPaymentMethod = value;
+                        });
+                      },
+                    ),
                   ),
                 ),
-              ),
+          
+              
 
 
 
@@ -434,18 +464,12 @@ class _DonationsPageState extends State<DonationsPage> with SingleTickerProvider
                   borderRadius: BorderRadius.circular(15),
                 ),
                 child: ListTile(
-                  leading: GestureDetector(
-                    onTap: () {
-                      // Handle M-Pesa selection logic here
-                    },
-                    child: Container(
-                      height: 40,
-                      width: 40,
-                      decoration: BoxDecoration(
-                        color: Colors.blueAccent,
-                        borderRadius: BorderRadius.circular(40),
-                      ),
-                      child: Image.asset('images/mpesa.png', fit: BoxFit.cover,),),
+                  onTap: () => setState(() => _selectedPaymentMethod = 'mpesa'),
+                  leading: Container(
+                    height: 40,
+                    width: 40,
+                    decoration: BoxDecoration(color: Colors.blueAccent, borderRadius: BorderRadius.circular(40)),
+                    child: Image.asset('images/mpesa.png', fit: BoxFit.cover,),
                   ),
                   title: const Center(
                     child: Text('M-PESA Payment', 
@@ -468,7 +492,6 @@ class _DonationsPageState extends State<DonationsPage> with SingleTickerProvider
                       setState(() {
                         _selectedPaymentMethod = value;
                       });
-                      // Handle M-PESA selection logic here
                     },
                   ),
                 ),
