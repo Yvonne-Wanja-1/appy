@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class AlbertPage extends StatelessWidget {
   const AlbertPage({super.key});
@@ -44,20 +45,27 @@ class AlbertPage extends StatelessWidget {
         body: SingleChildScrollView(
           child: Column(
             children: [
+              SizedBox(height: 20,),
               Padding(
                 padding: const EdgeInsets.all(10.0),
-                child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(30.0),
-
-                  ),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(30.0),
                   child: Image.asset(
                     'images/man1.png',
                     width: double.infinity,
+                    height: 300,
                     fit: BoxFit.fitWidth,
                   ),
                 ),
               ),
+              SizedBox(height: 10,),
+              Text('Mats Dialogue Participant',
+              style: GoogleFonts.dancingScript(
+                color: Colors.blue,
+
+              ),
+              ),
+
             ],
           ),
         ),
