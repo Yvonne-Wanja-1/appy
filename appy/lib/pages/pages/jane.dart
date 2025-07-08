@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class PastorPage extends StatelessWidget {
-  const PastorPage({super.key});
+class JanePage extends StatelessWidget {
+  const JanePage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Pastor Peter Kamau, 54',
+          title: Text('Jane Achieng, 17',
           style: GoogleFonts.dancingScript(
             color: Colors.blue,
             fontSize: 20,
@@ -40,13 +40,15 @@ class PastorPage extends StatelessWidget {
                           ),
                         ],
                       ),
-                      child: IconButton(
-                        padding: EdgeInsets.zero, // Remove default IconButton padding for better control
-                        icon: const Icon(Icons.arrow_back, color: Colors.white, size: 24), // Standard icon size
-                        onPressed: () {
-                          //take to the donation page
-                          Navigator.pop(context); // Corrected route
-                        },
+                      child: ClipOval(
+                        child: IconButton(
+                          padding: EdgeInsets.zero, // Remove default IconButton padding for better control
+                          icon: const Icon(Icons.arrow_back, color: Colors.white, size: 24), // Standard icon size
+                          onPressed: () {
+                            //take to the donation page
+                            Navigator.pop(context); // Corrected route
+                          },
+                        ),
                       ),
                     ),
                   ),
@@ -59,9 +61,9 @@ class PastorPage extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: ClipRRect(
-                  borderRadius: BorderRadius.circular(30.0),
+                  borderRadius: BorderRadius.circular(40.0),
                   child: Image.asset(
-                    'images/pastor.png',
+                    'images/girl.png',
                     width: double.infinity,
                     height: 300,
                     fit: BoxFit.fitWidth,
@@ -69,7 +71,7 @@ class PastorPage extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 10,),
-              Text('Spiritual Leadership Trainee',
+              Text('Mats Dialogue Participant',
               style: GoogleFonts.dancingScript(
                 color: Colors.blue,
 
@@ -78,11 +80,15 @@ class PastorPage extends StatelessWidget {
               Center(
                 child: Padding(
                   padding: const EdgeInsets.all(12.0),
-                  child: Text('''Seeing trauma in his congregation, Pastor Kamau joined Elim Trust's Leadership Training. With new tools, he now fosters healing and resilience within his community, creating a supportive environment for all.
+                  child: Text('''At 17, Achieng faced trauma and isolation as a teen mother. Through Elim Trust's MATS Dialogue program, she found a supportive community, regained her confidence, and is now pursuing her education.
 
-Through the training, he learned how to identify emotional wounds, offer trauma-informed care, and lead with empathy. He began implementing what he learned during sermons, counseling sessions, and youth outreach programs. The shift was powerful—members began to open up, share their struggles, and find strength in one another.
+When she first joined the program, Achieng carried the heavy burden of shame, rejection, and uncertainty about her future. She felt invisible—misunderstood by her peers and judged by her community. But MATS Dialogue became a turning point. The safe, nurturing space allowed her to share her story without fear of stigma. She discovered she wasn’t alone. Other young mothers were walking similar paths—and together, they began to heal.
 
-Pastor Kamau has become a beacon of hope in his community. By empowering others to process pain, build inner strength, and support one another, he’s helping to break the cycle of silence and suffering. Thanks to Elim Trust, his church is no longer just a place of worship—it’s now a sanctuary of healing and transformation.''',
+Through group counseling, life skills training, and mentorship, Achieng began to believe in herself again. She learned how to set boundaries, advocate for her needs, and dream beyond her current circumstances. With Elim Trust’s help, she re-enrolled in school, determined to give her child a brighter future.
+
+Today, Achieng is not only focused on her education, but she’s also become a peer mentor—encouraging other young mothers to rise above their pain and pursue their goals. What once seemed like the end of her story is now just the beginning.
+
+Elim Trust didn’t just support Achieng—they helped her reclaim her voice, her dreams, and her power.''',
                               style: TextStyle(
                                 fontStyle: FontStyle.italic,
                               ),
