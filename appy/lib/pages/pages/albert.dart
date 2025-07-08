@@ -9,7 +9,17 @@ class AlbertPage extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('Albert Page'),
+          title: Text('Albert Ruabe, 32',
+          style: GoogleFonts.dancingScript(
+            color: Colors.blue,
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+          ),
+          
+          ),
+          centerTitle: true,
+          backgroundColor: Colors.transparent,
+          elevation: 0,
 
 
               leading: Padding(
@@ -65,6 +75,52 @@ class AlbertPage extends StatelessWidget {
 
               ),
               ),
+              Center(
+                child: Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: Text('''Through Y-PREP, I have grown in self-awareness and resilience. I've learned to solve problems—not just for myself, but for my younger siblings and friends too. Despite the challenges I face at home and in school, I now approach life with confidence, purpose, and a desire to uplift others, just as Elim Trust uplifted me.
+                              
+                              Before joining Y-PREP, I often doubted my abilities and struggled to find hope during difficult times. But the support, mentorship, and life skills I’ve gained through the program have opened my eyes to my potential. I’ve learned the power of discipline, goal setting, and emotional intelligence. I’ve even started guiding others, offering advice and encouragement when they feel stuck or overwhelmed.
+                              
+                              Y-PREP has been more than just a program—it’s been a turning point in my life. I now believe that my voice matters, my dreams are valid, and I have what it takes to create a better future for myself and those around me. I’m truly grateful to Elim Trust for walking with me on this journey of growth and transformation''',
+                              style: TextStyle(
+                                fontStyle: FontStyle.italic,
+                              ),
+                  ),
+                ),
+              ),
+
+
+
+SizedBox(height: 20,),
+
+Padding(
+  padding: const EdgeInsets.all(20.0),
+  child: Row(
+    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    children: [
+      ElevatedButton(onPressed: (){}, 
+      child: Text('Previous',
+      style: TextStyle(
+        color: Colors.white,
+      ),
+      ),
+      style: ElevatedButton.styleFrom(
+        backgroundColor: Colors.blue,
+  )),
+
+        ElevatedButton(onPressed: (){}, 
+      child: Text('Next',
+      style: TextStyle(
+        color: Colors.white,
+      ),
+      ),
+      style: ElevatedButton.styleFrom(
+        backgroundColor: Colors.blue,
+  ))
+    ],
+  ),
+)
 
             ],
           ),
