@@ -99,25 +99,33 @@ Padding(
   child: Row(
     mainAxisAlignment: MainAxisAlignment.spaceBetween,
     children: [
-      ElevatedButton(onPressed: (){}, 
+  SizedBox(
+    width: 120,
+    child: ElevatedButton(
+      onPressed: (){}, 
       child: Text('Previous',
-      style: TextStyle(
-        color: Colors.white,
-      ),
+        style: TextStyle(
+          color: Colors.white,
+        ),
       ),
       style: ElevatedButton.styleFrom(
         backgroundColor: Colors.blue,
-  )),
+      ),
+    ),
+  ),
 
-        ElevatedButton(onPressed: (){}, 
-      child: Text('Next',
-      style: TextStyle(
-        color: Colors.white,
-      ),
-      ),
-      style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.blue,
-  ))
+        SizedBox(
+          width: 120,
+          child: ElevatedButton(onPressed: (){}, 
+                child: Text('Next',
+                style: TextStyle(
+          color: Colors.white,
+                ),
+                ),
+                style: ElevatedButton.styleFrom(
+          backgroundColor: Colors.blue,
+            )),
+        )
     ],
   ),
 )
