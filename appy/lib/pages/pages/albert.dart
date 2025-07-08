@@ -41,6 +41,26 @@ class AlbertPage extends StatelessWidget {
                   ),
         ),
         
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(30.0),
+
+                  ),
+                  child: Image.asset(
+                    'images/man1.png',
+                    width: double.infinity,
+                    fit: BoxFit.fitWidth,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
