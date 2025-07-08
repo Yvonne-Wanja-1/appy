@@ -102,7 +102,9 @@ Padding(
   SizedBox(
     width: 120,
     child: ElevatedButton(
-      onPressed: (){}, 
+      onPressed: (){
+        Navigator.pushNamed(context, '/albert');
+      }, 
       child: Text('Previous',
         style: TextStyle(
           color: Colors.white,
@@ -116,7 +118,9 @@ Padding(
 
         SizedBox(
           width: 120,
-          child: ElevatedButton(onPressed: (){}, 
+          child: ElevatedButton(onPressed: (){
+            Navigator.pushNamed(context, '/jane');
+          }, 
                 child: Text('Next',
                 style: TextStyle(
           color: Colors.white,
