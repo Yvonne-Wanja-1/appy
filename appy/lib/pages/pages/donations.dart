@@ -1,4 +1,5 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'package:elim_trust_2/pages/stk.dart';
 import 'package:elim_trust_2/widgets/textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -92,6 +93,18 @@ class _DonationsPageState extends State<DonationsPage> with SingleTickerProvider
           ],
         );
       },
+    );
+  }
+
+  void _handleMpesaPayment() {
+    setState(() {
+      _selectedPaymentMethod = 'mpesa';
+    });
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => STKPushPage(initialAmount: _otherAmountController.text),
+      ),
     );
   }
 
@@ -243,7 +256,9 @@ class _DonationsPageState extends State<DonationsPage> with SingleTickerProvider
                           ),
                         ),
                         onPressed: () {
-                          // Handle 100 KES donation
+                          setState(() {
+                            _otherAmountController.text = '100';
+                          });
                         },
                         child: const Text('100 KES', style: TextStyle(color: Colors.white)),
                       ),
@@ -256,7 +271,9 @@ class _DonationsPageState extends State<DonationsPage> with SingleTickerProvider
                           ),
                         ),
                         onPressed: () {
-                          // Handle 200 KES donation
+                          setState(() {
+                            _otherAmountController.text = '200';
+                          });
                         },
                         child: const Text('200 KES', style: TextStyle(color: Colors.white)),
                       ),
@@ -269,7 +286,9 @@ class _DonationsPageState extends State<DonationsPage> with SingleTickerProvider
                           ),
                         ),
                         onPressed: () {
-                          // Handle 500 KES donation
+                          setState(() {
+                            _otherAmountController.text = '500';
+                          });
                         },
                         child: const Text('500 KES', style: TextStyle(color: Colors.white)),
                       ),
@@ -282,7 +301,9 @@ class _DonationsPageState extends State<DonationsPage> with SingleTickerProvider
                           ),
                         ),
                         onPressed: () {
-                          // Handle 1000 KES donation
+                          setState(() {
+                            _otherAmountController.text = '1000';
+                          });
                         },
                         child: const Text('1000 KES', style: TextStyle(color: Colors.white)),
                       ),
@@ -486,7 +507,7 @@ class _DonationsPageState extends State<DonationsPage> with SingleTickerProvider
                   borderRadius: BorderRadius.circular(15),
                 ),
                 child: ListTile(
-                  onTap: () => setState(() => _selectedPaymentMethod = 'mpesa'),
+                  onTap: _handleMpesaPayment,
                   leading: Container(
                     height: 40,
                     width: 40,
@@ -511,9 +532,7 @@ class _DonationsPageState extends State<DonationsPage> with SingleTickerProvider
                     groupValue: _selectedPaymentMethod,
                     activeColor: Colors.blue,
                     onChanged: (String? value) {
-                      setState(() {
-                        _selectedPaymentMethod = value;
-                      });
+                      _handleMpesaPayment();
                     },
                   ),
                 ),

@@ -3,7 +3,8 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 
 class STKPushPage extends StatefulWidget {
-  const STKPushPage({super.key});
+  final String? initialAmount;
+  const STKPushPage({super.key, this.initialAmount});
 
   @override
   State<STKPushPage> createState() => _STKPushPageState();
@@ -14,6 +15,21 @@ class _STKPushPageState extends State<STKPushPage> {
   final _amountController = TextEditingController();
   bool _isLoading = false;
   String _statusMessage = '';
+
+  @override
+  void initState() {
+    super.initState();
+    if (widget.initialAmount != null && widget.initialAmount!.isNotEmpty) {
+      _amountController.text = widget.initialAmount!;
+    }
+  }
+
+  @override
+  void dispose() {
+    _phoneController.dispose();
+    _amountController.dispose();
+    super.dispose();
+  }
 
   Future<void> sendSTKPush() async {
     final phone = _phoneController.text.trim();
