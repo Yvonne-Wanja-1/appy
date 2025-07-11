@@ -49,7 +49,7 @@ class _STKPushPageState extends State<STKPushPage> {
 
     try {
       final response = await http.post(
-        Uri.parse('http://10.0.2.2:5000/api/stk-push'), // 👈 use 10.0.2.2 for Android emulator, or localhost for real device via ngrok
+        Uri.parse('http:// 192.168.56.1:5000/api/stk-push'), // 👈 use 10.0.2.2 for Android emulator, or localhost for real device via ngrok
         headers: {'Content-Type': 'application/json'},
         body: jsonEncode({'phone': phone, 'amount': int.parse(amount)}),
       );
