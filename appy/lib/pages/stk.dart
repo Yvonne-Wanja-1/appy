@@ -3,7 +3,8 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 
 class STKPushPage extends StatefulWidget {
-  const STKPushPage({super.key});
+  final String? initialAmount;
+  const STKPushPage({super.key, this.initialAmount});
 
   @override
   State<STKPushPage> createState() => _STKPushPageState();
@@ -14,6 +15,21 @@ class _STKPushPageState extends State<STKPushPage> {
   final _amountController = TextEditingController();
   bool _isLoading = false;
   String _statusMessage = '';
+
+  @override
+  void initState() {
+    super.initState();
+    if (widget.initialAmount != null && widget.initialAmount!.isNotEmpty) {
+      _amountController.text = widget.initialAmount!;
+    }
+  }
+
+  @override
+  void dispose() {
+    _phoneController.dispose();
+    _amountController.dispose();
+    super.dispose();
+  }
 
   Future<void> sendSTKPush() async {
     final phone = _phoneController.text.trim();
@@ -33,7 +49,7 @@ class _STKPushPageState extends State<STKPushPage> {
 
     try {
       final response = await http.post(
-        Uri.parse('http://10.0.2.2:5000/api/stk-push'), // 👈 use 10.0.2.2 for Android emulator, or localhost for real device via ngrok
+        Uri.parse('http:// 192.168.56.1:5000/api/stk-push'), // 👈 use 10.0.2.2 for Android emulator, or localhost for real device via ngrok
         headers: {'Content-Type': 'application/json'},
         body: jsonEncode({'phone': phone, 'amount': int.parse(amount)}),
       );
