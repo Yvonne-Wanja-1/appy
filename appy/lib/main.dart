@@ -1,12 +1,11 @@
-
-
+import 'package:flutter/material.dart';
+import 'package:elim_trust_2/widgets/splash_screen.dart';
 import 'package:elim_trust_2/pages/pages/albert.dart';
 import 'package:elim_trust_2/pages/pages/blogs.dart';
 import 'package:elim_trust_2/pages/pages/capacity.dart';
 import 'package:elim_trust_2/pages/pages/changepassword.dart';
 import 'package:elim_trust_2/pages/pages/communitypage.dart';
 import 'package:elim_trust_2/pages/pages/contact.dart';
-//import 'package:elim_trust_2/pages/pages/contactsupport.dart';
 import 'package:elim_trust_2/pages/pages/donations.dart';
 import 'package:elim_trust_2/pages/pages/editinfo.dart';
 import 'package:elim_trust_2/pages/pages/faqs.dart';
@@ -30,13 +29,11 @@ import 'package:elim_trust_2/pages/pages/signup.dart';
 import 'package:elim_trust_2/pages/pages/story.dart';
 import 'package:elim_trust_2/pages/pages/vunja.dart';
 import 'package:elim_trust_2/pages/pages/yprep.dart';
-import 'package:flutter/material.dart';
 
-void main(){
-  // This is the main entry point of the application.
-  // It runs the app and sets up the necessary configurations.
+void main() {
   runApp(const MyApp());
 }
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -45,58 +42,45 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Elim Trust Org',
-theme: ThemeData( // It's good practice to enable Material 3
-  // colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-  useMaterial3: true, // meaning it will use the latest Material Design 3 features
-),
-initialRoute: '/home', // The initial route of the app
-
-routes: {
-  '/home': (context) => const HomePage(),
-  '/projects': (context) => const ProjectsPage(),
-   '/donations': (context) => const DonationsPage(),  
-   '/community': (context) => const CommunityPage(),
-  '/profile': (context) => const ProfilePage(),
-
-  '/yprep': (context) => const YprepPage(),
-    '/matsdialogue': (context) => const MatsDialoguePage(),
-    '/vunja': (context) => const VunjaPage(),
-   '/capacity': (context) => const CapacityPage(),
-
-
-   '/latestnews': (context) => const LatestnewsPage(), 
-  '/blogs': (context) => const BlogsPage(), 
-  '/gallery': (context) => const GalleryPage(), // Add an about page route
-  '/contact': (context) => const ContactPage(), // Add a contact page route
-  '/signin': (context) => const SigninPage(), // Add an about page route
-  '/signout': (context) => const SignoutPage(), // Add a settings page route
-  '/signup': (context) => const SignupPage(), // Add a contact page route
-   '/editinfo': (context) => const EditInfo(), // Add an edit info page route
-  '/story': (context) => const StoryPage(), // Default route to home page
-   '/settings': (context) => const SettingsPage(),  
-
-
-  '/feedback': (context) => const FeedbackPage(),
-  //'/contact_support': (context) => const ContactsupportPage(),
-  '/faqs': (context) => const FaqsPage(), // Add a FAQs page route
-  '/change_password': (context) => const PasswordPage(), // 
-  '/manage_account': (context) => const ManageAccountPage(),
-  
-  '/readmorelatestnews': (context) => const Readmorelatestnews(),
-  '/readmoreblogs': (context) => const Readmoreblogs(),
-  '/secondreadmoreblogs': (context) => const SecondReadmoreblogs(),
-  // Add more routes as needed'
-  '/albert': (context) => const AlbertPage(),
-  '/pastor': (context) => const PastorPage(),
-  '/jane': (context) => const JanePage(),
-  // Add more routes as needed''
-  
-
-
-},
-
-
-     
+      theme: ThemeData(
+        useMaterial3: true,
+        primarySwatch: Colors.blue,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
+      ),
+      home: SplashScreen(
+        child: const HomePage(),
+      ),
+      routes: {
+        '/home': (context) => const HomePage(),
+        '/projects': (context) => const ProjectsPage(),
+        '/donations': (context) => const DonationsPage(),
+        '/community': (context) => const CommunityPage(),
+        '/profile': (context) => const ProfilePage(),
+        '/yprep': (context) => const YprepPage(),
+        '/matsdialogue': (context) => const MatsDialoguePage(),
+        '/vunja': (context) => const VunjaPage(),
+        '/capacity': (context) => const CapacityPage(),
+        '/latestnews': (context) => const LatestnewsPage(),
+        '/blogs': (context) => const BlogsPage(),
+        '/gallery': (context) => const GalleryPage(),
+        '/contact': (context) => const ContactPage(),
+        '/signin': (context) => const SigninPage(),
+        '/signout': (context) => const SignoutPage(),
+        '/signup': (context) => const SignupPage(),
+        '/editinfo': (context) => const EditInfo(),
+        '/story': (context) => const StoryPage(),
+        '/settings': (context) => const SettingsPage(),
+        '/feedback': (context) => const FeedbackPage(),
+        '/faqs': (context) => const FaqsPage(),
+        '/change_password': (context) => const PasswordPage(),
+        '/manage_account': (context) => const ManageAccountPage(),
+        '/readmorelatestnews': (context) => const Readmorelatestnews(),
+        '/readmoreblogs': (context) => const Readmoreblogs(),
+        '/secondreadmoreblogs': (context) => const SecondReadmoreblogs(),
+        '/albert': (context) => const AlbertPage(),
+        '/pastor': (context) => const PastorPage(),
+        '/jane': (context) => const JanePage(),
+      },
     );
   }
 }
