@@ -35,9 +35,10 @@ class _GetStartedPageState extends State<GetStartedPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue.shade50,
+      backgroundColor: const Color(0xFFF7F7F7),
       body: SafeArea(
         child: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 24.0),
             child: Form(
@@ -49,8 +50,8 @@ class _GetStartedPageState extends State<GetStartedPage> {
                   Image.asset(
                     'images/elimtrust.png',
                     height: 100,
-                    color: Colors.blue.shade700,
-                    colorBlendMode: BlendMode.srcIn,
+                   // color: Colors.blue.shade700,
+                   // colorBlendMode: BlendMode.srcIn,
                   ),
                   const SizedBox(height: 32),
                   Text(
