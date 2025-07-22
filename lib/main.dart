@@ -28,9 +28,7 @@ import 'package:elim_trust_2/pages/pages/readmoreblogs.dart';
 import 'package:elim_trust_2/pages/pages/readmorelatestnews.dart';
 import 'package:elim_trust_2/pages/pages/secondreadmoreblogs.dart';
 import 'package:elim_trust_2/pages/pages/settings.dart';
-import 'package:elim_trust_2/pages/pages/signin.dart';
-import 'package:elim_trust_2/pages/pages/signout.dart';
-import 'package:elim_trust_2/pages/pages/signup.dart';
+
 import 'package:elim_trust_2/pages/pages/story.dart';
 import 'package:elim_trust_2/pages/pages/vunja.dart';
 import 'package:elim_trust_2/pages/pages/yprep.dart';
@@ -75,10 +73,7 @@ class MyApp extends StatelessWidget {
         '/latestnews': (context) => const LatestnewsPage(),
         '/blogs': (context) => const BlogsPage(),
         '/gallery': (context) => const GalleryPage(),
-        '/contact': (context) => const ContactPage(),
-        '/signin': (context) => const SigninPage(),
-        '/signout': (context) => const SignoutPage(),
-        '/signup': (context) => const SignupPage(),
+        '/contact': (context) => const ContactPage(), 
         '/editinfo': (context) => const EditInfo(),
         '/story': (context) => const StoryPage(),
         '/settings': (context) => const SettingsPage(),
