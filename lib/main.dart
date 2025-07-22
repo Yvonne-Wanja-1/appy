@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart'; // 👈 this is the magic file with all the keys
+
 import 'widgets/splash_screen.dart';
 import 'pages/auth/signin_page.dart';
 import 'pages/auth/get_started_page.dart';
@@ -32,7 +35,12 @@ import 'package:elim_trust_2/pages/pages/story.dart';
 import 'package:elim_trust_2/pages/pages/vunja.dart';
 import 'package:elim_trust_2/pages/pages/yprep.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized(); // 👈 must-have
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  ); // 👈 This connects to your Firebase project
+
   runApp(const MyApp());
 }
 
