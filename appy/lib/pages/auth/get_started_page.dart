@@ -26,7 +26,7 @@ class _GetStartedPageState extends State<GetStartedPage> {
   }
 
   void _handleSignUp() {
-    if (_formKey.currentState!.validate()) {
+    if (_formKey.currentState?.validate() ?? false) {
       // TODO: Implement sign up logic
       Navigator.pushReplacementNamed(context, '/home');
     }
