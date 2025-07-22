@@ -249,7 +249,7 @@ class _GetStartedPageState extends State<GetStartedPage> {
                           height: 24,
                         ),
                       ),
-                      const SizedBox(width: 20),
+                      const SizedBox(width: 50),
                       Container(
                         padding: const EdgeInsets.all(12),
                         decoration: BoxDecoration(
