@@ -48,7 +48,7 @@ class _GetStartedPageState extends State<GetStartedPage> {
                   const SizedBox(height: 40),
                   Image.asset(
                     'images/elimtrust.png',
-                    height: 100,
+                    height: 150,
                   ),
                   const SizedBox(height: 32),
                   Text(
