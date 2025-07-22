@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "894396928045",
+    "project_id": "appy-fa372",
+    "storage_bucket": "appy-fa372.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:894396928045:android:aadd11c87fd239361068a4",
+        "android_client_info": {
+          "package_name": "com.example.appy"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDAOD54owFPP-jLy3GqJdpWxmcz8xOtaTE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
